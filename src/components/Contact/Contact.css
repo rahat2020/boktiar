@@ -1,0 +1,125 @@
+.c{
+    height: 100vh;
+    position: relative;
+    margin-bottom:4em;
+}
+.c-bg{
+    width: 20px;
+    height: 80%;
+    background-color: #fd2929f5;
+    position: absolute;
+}
+.c-wrapper{
+    padding: 3.1em;
+    display: flex;
+}
+.c-left{
+    flex: 1
+}
+.c-title{
+    font-size: 50px;
+    width: 70%;
+}
+.c-info-item{
+    display: flex;
+    align-items: center;
+    margin: 50px 0px;
+    font-weight: 300;
+    width: 70%;
+} 
+.c-item{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+/* right */
+.c-right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.c-desc{
+    font-weight: 300;
+}
+form{
+    margin-top: 20px;
+}
+input{
+    width: 50%;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid #0000006c;
+    margin: 10px 0px;
+    font-size: 14px; 
+    padding-left: 10px;
+}
+textarea{
+    width: 100%;
+    margin: 10px 0px;
+    font-size: 14px; 
+    padding-left: 10px;
+}
+.btn-submit{
+    border: .5px solid #918e8e5d;
+    padding: 10px 25px;
+    background-color: #fd2929f5;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.btn-submit:hover{
+  background-color: #fff;
+  border: .5px solid #333;
+  color: #000;
+  font-weight: 500;
+}
+
+/* responsive  */
+@media screen and (max-width: 480px) {
+  .c{
+    margin-bottom: 5em;
+  }
+  .c-bg{
+    height: 100%;
+  }
+    .c-wrapper {
+      flex-direction: column;
+      padding: 0px 50px;
+    }
+  
+    .c-title {
+      font-size: 2em;
+      display: block;
+    }
+  .c-info{
+    display: none;
+  }
+  
+    .c-desc {
+      display: none;
+    }
+    .c-left{
+      margin-top: 40px;
+    }
+  
+    form {
+      margin-top: 0px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    input {
+      width: 100%;
+      height: 40px;
+      margin: 10px;
+      margin-left: 0;
+    }
+  
+    button {
+      margin-top: 10px;
+    }
+  }

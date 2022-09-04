@@ -1,0 +1,118 @@
+.review{
+    border: 1px solid #c2c1c141;
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow:1px 2px 16px 2px rgba(0, 0, 0, 0.123);
+}
+.reviewContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.avatar{
+    width: 5em;
+    border-radius: 50%;
+}
+
+.reviewTitle{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    line-height:5px;
+    margin-bottom: 1em;
+}
+.reviewRank{
+    color: #777;
+    font-size: .9em;
+}
+.author-title{
+    font-size:1.3em;
+    font-weight: 600;
+    color: #000000da;
+}
+.reviewPara{
+    padding: 10px;
+   text-align: center;
+   color: #777;
+   font-size: 1em;
+}
+
+.socialIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    width: 40px;
+    height: 40px;
+    border-radius:5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+.media {
+    font-size: 1.7em;
+}
+ .facebook{
+    background-color: #1e1ee9c5;
+    color: white;
+    transition: all 0.5s ease;
+}
+.facebook:hover{
+    color: white;
+    transform: scale(1.1);
+    border-radius:15px 5px;
+}
+.linkedIn{
+    background-color: #0d4dfd;
+    color: white;
+    transition: all 0.5s ease;
+}
+.linkedIn:hover{
+    color: white;
+    transform: scale(1.1);
+      border-radius:15px 5px;
+}
+.instagram{
+    background-color: #ff2a7c;
+    color: white;
+    transition: all 0.5s ease;
+}
+.instagram:hover{
+    color: white;
+    transform: scale(1.1);
+      border-radius:15px 5px;
+}
+
+@media only screen and (max-width: 480px){
+    .testimonial{
+        height: 100%;
+    }
+    .review{
+        height: 100%;
+    }
+    .reviewTitle{
+        margin-bottom: 5px;
+    }
+    .reviewPara{
+        font-size: .8em;
+        text-align:justify;
+    }
+    .socialIcon{
+        margin-bottom: 20px;
+    }
+   .box{
+       width: 40px;
+       height: 35px;
+   }
+   .media{
+       font-size: 20px;
+   }
+}

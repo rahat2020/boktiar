@@ -1,0 +1,17 @@
+.font-discription{
+    color: #000;
+}
+.btn-preview{
+    border: .5px solid #9794941a;
+    background-color: #fd2929f5;
+    color: #fff;
+    font-weight: 500;
+    transition:all .5s linear;
+}
+.btn-preview:hover{
+
+    background-color: #fff;
+    border: .5px solid #7471716b;
+    color: #000;
+    font-weight: 500;
+}

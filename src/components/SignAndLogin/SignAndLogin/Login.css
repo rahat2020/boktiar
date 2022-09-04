@@ -1,0 +1,105 @@
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1eeeeea;
+    width: 100%;
+    height: 100%;
+    
+}
+.login .login-contianer{
+    width:800px;
+    height: 100%;
+    /* border: 1px solid #333; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    background-color: #ffffff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .2), 0 10px 10px rgba(0, 0, 0, .2);
+}
+.login-title{
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 1px;
+}
+.form{
+    width: 100%;
+    height: 100%; 
+    padding: 2rem;
+}
+.left{
+    width: 400px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid #333; */
+}
+.btn-login{
+    width: 100%;
+    height: 100%;
+    border: 0.5px solid #9794941a;
+    padding: 10px 25px;
+    background-color: #fd2929f5;
+    color: white;
+    font-weight: 500;
+    border-radius:5px;
+    transition: all 0.5s ease;
+    letter-spacing:1px;
+    margin-bottom: 1rem;
+}
+.btn-login:hover{
+    border: 0.5px solid #97949456;
+    padding: 10px 25px;
+    background-color: #f8f8f8f5;
+    font-weight: 500;
+    color: #333;
+}
+
+/* right side */
+.right{
+    width: 400px;
+}
+.img-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-container .sign-img{
+    width: 100%;
+}
+
+/* responsive ////////////////////////////// */
+@media only screen and (max-width:468px){
+    .left{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .form{
+        width: 100% !important;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .btn-login{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .right{
+        display: none;
+    }
+}

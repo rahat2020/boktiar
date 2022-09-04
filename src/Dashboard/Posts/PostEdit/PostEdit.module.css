@@ -1,0 +1,82 @@
+.TeacherAdd{
+    padding: 6.55rem;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.title{
+    color: #010d13c9;
+    font-weight: 700;
+}
+
+.teacherTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.firstTitle{
+    font-size: 1.11rem;
+}
+.scndTitle{
+    color:#928d90 ;
+    letter-spacing: 1px;
+}
+
+/* Teacher add  */
+.Tadd{
+    border: 0.99px  #b4b1b391;
+    height:auto;
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px 0px rgba(232,221,224,0.75);
+-webkit-box-shadow: 1px 1px 8px 0px rgba(232,221,224,0.75);
+-moz-box-shadow: 1px 1px 8px 0px rgba(232,221,224,0.75);
+
+}
+.bdtails{
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+}                        
+.line{
+    color: red;
+    width: 100px;
+    height: 2px;
+}
+.lgntails,.adrstails{
+    margin-top: 20px;
+}
+
+
+/* responsive styles */
+@media only screen and (max-width:468px){
+    .TeacherAdd{
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: .77rem;
+        width: 100%;
+    }
+    .teacherTitle{
+        display: flex;
+        justify-content: flex-start;
+        align-items: start;
+        width: 100%;
+    }
+    .colLeft{
+        margin-left: 4.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        width: 100%;
+    }
+    .Tadd{
+        padding: 2rem;
+        margin-left: 2em;
+        box-shadow: none;
+    }
+}

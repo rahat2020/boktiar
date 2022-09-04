@@ -1,0 +1,96 @@
+.card-container{
+    border:   #88888894;
+    border-radius: 1.55rem;
+    position: relative;
+    box-shadow: 1px 1px 1rem #88888869;
+}
+.line{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+.line-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.34rem;
+    width: 100px;
+    height: 100px;
+    background: #ffffff;
+    box-shadow: 8px 12px 21px -3px rgba(0,0,0,0.28);
+    -webkit-box-shadow: 8px 12px 21px -3px rgba(0,0,0,0.28);
+    -moz-box-shadow: 8px 12px 21px -3px rgba(0,0,0,0.28);
+    border-radius: 0px 80px 67px 67px;
+}
+.line-container h2{
+    letter-spacing:2px;
+}
+.lines{
+    width: 4.56rem;
+    height: 5px;
+    border-radius: 7px 7px 5px 5px;
+    margin-top: -8px;
+    background: linear-gradient( #ff9966, #ff5e62);
+    box-shadow: 8px 12px 21px -3px rgba(245,10,10,0.28);
+-webkit-box-shadow: 8px 12px 21px -3px rgba(245,10,10,0.28);
+-moz-box-shadow: 8px 12px 21px -3px rgba(245,10,10,0.28);
+}
+.card-container{
+    transition: all 0.5s ease;
+}
+.card-container:hover{
+    transform: scale(1.1)
+}
+.imgContainer {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 63px;
+    height: 63px;
+    background: linear-gradient(90deg, #ff9966, #ff5e62);
+    box-shadow: 1px 1px 2rem #968f8f36;
+    border-radius: 50%;
+}
+.blogImg{
+    width: 55px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.card-title {
+    color: #000000da;
+    font-size: 1.34rem;
+    font-weight: 600;
+}
+.card-text{
+    color: #666;
+    font-size: .9rem;
+}
+.body-container{
+    padding:2rem;
+}
+.date{
+    color: #888;
+    font-weight: 500;
+    font-size: .9em;
+}
+.b-btn{
+    border: 0.5px solid #9794941a;
+    padding: 7px 15px;
+    background-color: #fd2929f5;
+    color: white;
+    font-weight: 500;
+    font-size: .9em;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.b-btn:hover{
+    background-color: #fff;
+    border: .5px solid #7471716b;
+    color: #000;
+    font-weight: 500;
+}

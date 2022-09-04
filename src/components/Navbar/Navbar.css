@@ -1,0 +1,38 @@
+.navbar-custom{
+    border-radius: 0px;
+    /* background: #222831; */
+    background: rgb(41, 40, 40);
+    /* box-shadow:  10px 10px 20px #0e1014, -10px -10px 20px #36404e; */
+}
+/* .nav-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+} */
+.navbar-custom a{
+    color: #fff;
+}
+.nav-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+.nav-link:hover{
+    color: #fd2929f5;
+}
+.btn__logout{
+    background-color: #ffffff05;
+    border: none;
+    color: #fff;
+}
+/* .navbar-custom .active{
+    color: #F4821F;
+    color: rgb(244, 130, 31);
+} */
+.custom-toggler .navbar-toggler-icon-custom{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(244, 130, 31)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+

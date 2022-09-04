@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,300&display=swap');
+
+.abme {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.clleft {
+    background-image: linear-gradient(to bottom, #f5f6fc85, #75135dba), url('../../img/mebg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80vh;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.clleft .me-card {
+    position: absolute;
+    height: 400px !important;
+    right: -3rem;
+    display: flex;
+    align-items: center;
+    background-color: #75135dba;
+    border-radius: 75px 6px 73px 6px;
+    box-shadow: 0px 0px 8px 2px #ffffffab;
+    -webkit-box-shadow: 0px 0px 8px 2px #ffffff91;
+    -moz-box-shadow: 0px 0px 8px 2px #ffffffab;
+    /* background-color: #F2EBE7; */
+
+}
+
+.me-card .me-img-contanier {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    /* border: 2px solid #fff; */
+    border-radius: 75px 6px 73px 6px;
+}
+
+.me-card .me-card-img {
+    width: 80%;
+    height: 100%;
+    border-radius: 50px;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+.card-content .card-title {
+    color: #fff;
+    font-family: 'Titillium Web', sans-serif;
+    letter-spacing: 2px;
+    /* margin-top: 1rem; */
+    font-weight: 600;
+
+}
+ .mark{
+    color: #029BE8 !important;
+    margin-left: .2rem;
+    background-color: #75135d5b;
+    font-size: 1rem;
+}
+.div{
+    background-color: #fff;
+    height: 3px;
+    width: 40px;
+    border-radius:10px;
+}
+.card-content .card-dev {
+    color: #fff;
+    font-family: 'Titillium Web', sans-serif;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+}
+.card-content .card-job {
+    color: #fff;
+    font-family: 'Titillium Web', sans-serif;
+    letter-spacing: 1px;
+    margin-top: -.5rem;
+}
+.card-bottom {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.card-bottom .card-media{
+    position: absolute;
+    background-color: white;
+    left: -2px;
+    bottom: -3px;
+    width: 100%;
+    height: 60px;
+    border-radius: 0px 0px 73px 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-media .card-media-link{
+    text-decoration: none;
+}
+.card-media .me-icon{
+    font-size: 1.78rem;
+    margin: 10px;
+}
+
+/* cullam right styles ///////////////// */
+.clrgt{
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    margin: 10% 0;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.clrgt .clrgt-container{
+    position: absolute;
+    left: 50px;
+}
+.clrgt-container .clrgt-title{
+    font-weight: 700;
+    color: #ff44d0ee;
+    letter-spacing: 2px;
+}
+.clrgt-btn-container{
+    margin-top: 2rem;
+}
+.clrgt-container .clrgt-para{
+    /* color: #000000e1; */
+    color: #ff44d0ee;
+    font-weight: 300;
+}
+.clrgt-btn-container .btn-projects{
+    background-color: #5f094ab9;
+    border: 2px solid #5f094ab9;
+    color: #fff;
+    letter-spacing: 1px;
+    padding: .5rem 2rem;
+    transition:all .5s ease-in-out;
+}
+.clrgt-btn-container .btn-resume{
+    background-color: #ff0000ee;
+    border: 2px solid#ff0000ee;
+    color: #fff;
+    letter-spacing: 1px;
+    padding: .5rem 2rem;
+    transition:all .5s ease-in-out;
+}
+.btn-resume:hover{
+    border: 2px solid#ff0000ee;
+    background-color: #fff;
+    color: red;
+    font-weight: 600;
+}
+.btn-projects:hover{
+    border: 2px solid#75135dba;
+    background-color: #fff;
+    color: #5f094ab9;
+    font-weight: 600;
+}
+
+
+
+/* responsive styles */
+@media only screen and (max-width: 468px){
+    .clleft{
+        background-image: none;
+    }
+    .me-card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        left: 60px;
+    }
+    .clrgt{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+    
+    }
+    .clrgt-container{
+        padding: 20px;
+    }
+}
