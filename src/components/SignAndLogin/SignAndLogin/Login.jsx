@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import './Login.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../../Navbar/Navbar';
@@ -6,7 +6,7 @@ import sign from '../../../img/sign.png';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useContext } from 'react';
-import { UserContext } from '../../../App';
+// import { UserContext } from '../../../App';
 import Particles from 'react-tsparticles';
 import { AuthContext } from '../../../Context/AuthContext';
 
@@ -15,7 +15,7 @@ import { AuthContext } from '../../../Context/AuthContext';
 const Login = () => {
   const [name, setUserName] = useState("")
   const [pass, setPassword] = useState("")
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   // console.log(loggedInUser)
   const { dispatch } = useContext(AuthContext);
 
@@ -35,14 +35,14 @@ const Login = () => {
     // console.log(loginobj)
     try {
       dispatch({ type: "LOGIN_START" });
-      const res = await axios.post("http://localhost:5000/auth/login", loginobj)
+      const res = await axios.post("https://boktiar.herokuapp.com/auth/login", loginobj)
       // console.log(res)
       res.data && Swal.fire({
         icon: 'success',
         title: 'Logged in Successfully',
         text: 'Thank you for logged in',
       })
-      setLoggedInUser(res.data);
+      // setLoggedInUser(res.data);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       localStorage.setItem("token", JSON.stringify(res.data.token))
       // navigate("/dash");

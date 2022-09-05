@@ -13,9 +13,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import Particles from "react-tsparticles";
 
 export default function ProjectsDetails({ item }) {
-    const pic = "http://localhost:5000/images/";
+    const pic = "https://boktiar.herokuapp.com/images/";
 
-    const { name, modalId, link, technologies, details, type, id, gitHubServer, gitHubClient, photo } = item;
+    const { name, modalId, link, technologies, details, type, _id, gitHubServer, gitHubClient, photo } = item;
 
     // const [isOpen, setOpen] = useState(false)
     const notify = () => toast("Video will arrive soon, thanks for clicking😍");
@@ -118,7 +118,7 @@ export default function ProjectsDetails({ item }) {
             <div className="pd-container">
                 <div className="row pt-3 project">
                     <div className="col-md-6 project-img-col">
-                        <h2 className="color-primary mb-2 font-secondary color-secondary" data-aos="zoom-in">Project {id} <h5 className="fs-6 color-primary">[{type}]</h5></h2>
+                        <h2 className=" mb-2 font-secondary color-primary">Project <h5 className="fs-6 color-primary">[{type}]</h5></h2>
                         {/* <div className={`project-img ${projectBgClass}`}></div> */}
                         <div className="project-img">
                             <img className="img" src={pic + photo} alt="" />
@@ -159,7 +159,7 @@ export default function ProjectsDetails({ item }) {
                     </div>
 
                     {/* Modal */}
-                    <ProjectDetailModal item={item} key={id}></ProjectDetailModal>
+                    <ProjectDetailModal item={item} key={_id}></ProjectDetailModal>
                 </div>
             </div>
         </>

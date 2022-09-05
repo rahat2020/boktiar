@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../../App';
+// import { UserContext } from '../../App';
 import { AuthContext } from '../../Context/AuthContext';
-import user from '../../img/proMe.png';
+import userimg from '../../img/proMe.png';
 import './Sidebar.css';
 import Welcome from './Welcome';
 import jwt_decode from "jwt-decode";
@@ -14,7 +14,7 @@ const Sidebar = () => {
     // const [sopen, setSopen] = useState(false)
     const [suopen] = useState(false)
     const [writePpen, setWritePpen] = useState(false)
-    const [ loggedInUser] = useContext(UserContext)
+    // const [ user] = useContext(UserContext)
 
     const authToken = JSON.parse(localStorage.getItem('token'))
     const decoded = jwt_decode(authToken)
@@ -34,17 +34,17 @@ const Sidebar = () => {
                     <div className="headerToggle" onClick={() => setShow(!show)}>
                         <i className="fa-solid fa-bars-staggered" id="headerIcon"></i>
                     </div>
-                    <strong className="text-white">{loggedInUser.name ? loggedInUser.name : "User name"}</strong>
+                    <strong className="text-white">{user ? user.name : "User name"}</strong>
                     <div className="headerImgContainer">
                         <div className="topleft">
                             <i className="fa-solid fa-bell bell "></i>
                             {/* {
-                            loggedInUser.img ?
-                            <img src={loggedInUser.img ? loggedInUser.img : user} alt="" className="headerImg" />
+                            user.img ?
+                            <img src={user.img ? user.img : user} alt="" className="headerImg" />
                             :
                             <img src={user} alt="" className="headerImg" />
                         } */}
-                            <img src={user} alt="" className="headerImg" />
+                            <img src={userimg} alt="" className="headerImg" />
                             <div className="dropdown">
                                 <span type="span" className="dropdown-toggle" data-bs-toggle="dropdown" />
                                 <ul className="dropdown-menu">

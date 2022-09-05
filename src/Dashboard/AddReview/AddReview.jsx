@@ -33,14 +33,14 @@ const AddReview = () => {
             data.append("file", file);
             newReview.photo = filename;
             try {
-                await axios.post("http://localhost:5000/review/reviewimg", data);
+                await axios.post("https://boktiar.herokuapp.com/review/reviewimg", data);
             } catch (err) {
                 console.log(err, 'review img submit failed');
             }
         }
 
         try {
-            const res = await axios.post("http://localhost:5000/review/addreview", newReview);
+            const res = await axios.post("https://boktiar.herokuapp.com/review/addreview", newReview);
             console.log(res)
             res.data && Swal.fire({
                 icon: 'success',

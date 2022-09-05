@@ -12,21 +12,20 @@ import Toggle from '../Toggle/Toggle';
 import Videos from '../Videos/Videos';
 
 export default function Home() {
-    return (
 
-        
+    return (
         <>
-            <Toggle/>
-            <Intro/>
-            <Navbar/>
-            <About/>
-            <Skill/>
-            <ProductList/>
-            <Videos/>
-            <Blogs/>
-            <Testimonial/>
-            <Contact/>
-            <ContactBottom/>
+            <Toggle />
+            <Intro />
+            <Navbar />
+            <About />
+            <Skill />
+            <ProductList />
+            {/* <Videos/> */}
+            <Blogs />
+            <Testimonial />
+            <Contact />
+            <ContactBottom />
         </>
     )
 }

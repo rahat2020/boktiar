@@ -2,7 +2,7 @@ import React from 'react';
 import './Product.css';
 
 export default function Product({photo, link}) {
-    const pic = "http://localhost:5000/images/";
+    const pic = "https://boktiar.herokuapp.com/images/";
     return (
         <div data-aos="fade-up" className="p mb-5">
             <p className="p-browser">

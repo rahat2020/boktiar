@@ -7,7 +7,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const StudentView = () => {
-    const pic = "http://localhost:5000/images/";
+    const pic = "https://boktiar.herokuapp.com/images/";
     const [singlePost, setsinglePost] = useState([])
     // console.log('single post', singlePost)
     // const [post, setPost] = useState({})
@@ -15,7 +15,7 @@ const StudentView = () => {
 
     useEffect(() => {
         const getPost = async () => {
-            const res = await axios.get(`http://localhost:5000/post/singlePost/${_id}`)
+            const res = await axios.get(`https://boktiar.herokuapp.com/post/singlePost/${_id}`)
             setsinglePost(res.data)
             // setPost(res)
            
@@ -43,7 +43,7 @@ const StudentView = () => {
     }
     const handleUpdate = async () => {
         try {
-            const res = await axios.put(`http://localhost:5000/post/update/${singlePost._id}`, config, {
+            const res = await axios.put(`https://boktiar.herokuapp.com/post/update/${singlePost._id}`, config, {
                 name,
                 modalId,
                 type,

@@ -9,3 +9,17 @@
 /* body{
     scroll-behavior: smooth;
 } */
+
+.dark-theme{
+    background-color: #222;
+    color: #f3f3f3;
+}
+.dark-theme h2{
+    color: #222;
+}
+.dark-theme h5{
+    color: #afafaf;
+}
+.light-theme{
+    background-color: #fff;
+}

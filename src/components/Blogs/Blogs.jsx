@@ -7,7 +7,7 @@ const Blogs = () => {
         <section className="mt-4 pt-4 mb-4 pb-4 container">
             <div className="line">
                 <div className="line-container">
-                    <h2 className="text-center fs-2 fw-bold">Blogs</h2>
+                    <h2 className="text-center fs-2 fw-bold blog__title">Blogs</h2>
                     <div className="lines"></div>
                 </div>
             </div>

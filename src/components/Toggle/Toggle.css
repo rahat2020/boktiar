@@ -26,3 +26,9 @@
     position: absolute;
     cursor: pointer;
 }
+.left__bg{
+    left: 0;
+}
+.light__bg{
+    right: 0;
+}
