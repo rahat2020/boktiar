@@ -33,6 +33,7 @@ function App() {
 
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
+  console.log(darkMode)
   const [loggedInUser, setLoggedInUser] = useState({})
   const { user, decoded } = useContext(AuthContext)
   console.log(decoded)
@@ -67,7 +68,7 @@ function App() {
 
             {/* DASHBOARD */}
 
-            {/* <Route path="/dashboard" element=
+            <Route path="/dashboard" element=
               {
                 user ?
                   <Dashbaord />
@@ -125,7 +126,7 @@ function App() {
                 <PrivateRoute>
                   <Home />
                 </PrivateRoute>}
-            /> */}
+            />
           </Routes>
           <Gototop />
       </UserContext.Provider>
