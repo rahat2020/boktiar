@@ -22,7 +22,7 @@ import AddReview from "./Dashboard/AddReview/AddReview";
 import Forgotpass from "./components/SignAndLogin/Forgotpass/Forgotpass";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Contact from "./components/Contact/ContactMe";
-import jwt_decode from "jwt-decode";
+
 import Gototop from "./components/Gototop/Gototop";
 import { AuthContext } from "./Context/AuthContext";
 import { ThemeContext } from "./Context/Context";
@@ -34,10 +34,9 @@ function App() {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
   const [loggedInUser, setLoggedInUser] = useState({})
-  const { user } = useContext(AuthContext)
+  const { user, decoded } = useContext(AuthContext)
+  console.log(decoded)
 
-  const authToken = JSON.parse(localStorage.getItem('token'))
-  const decoded = jwt_decode(authToken)
 
   return (
     <div className="app" style={{ backgroundColor: darkMode ? "#222 !important" : "#fff", color: darkMode ? "#fff" : "#000" }}>
@@ -47,10 +46,8 @@ function App() {
           pageId="101340032265864"
           appId="453100279489200"
         /> 
-        <BrowserRouter>
 
           <Routes>
-
             <Route path="/" element={<Home />} />
             <Route path="/allProjects" element={<Projects />} />
             <Route path="/all-blogs" element={<AllBlogs />} />
@@ -60,9 +57,17 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/forgotpass" element={<Forgotpass />} />
 
+            {/* <Route path="/dashboard" element={<Dashbaord />} />
+            <Route path="/admin" element={<AdminDash />} />
+            <Route path="/allposts" element={<Forgotpass />} />
+            <Route path="/addpost" element={<PostAdd />} />
+            <Route path="/singlepost/:_id" element={<PostView />} />
+            <Route path="/addreview" element={<AddReview />} />
+            <Route path="/postedit" element={<PostEdit />} /> */}
+
             {/* DASHBOARD */}
 
-            <Route path="/dashboard" element=
+            {/* <Route path="/dashboard" element=
               {
                 user ?
                   <Dashbaord />
@@ -120,13 +125,15 @@ function App() {
                 <PrivateRoute>
                   <Home />
                 </PrivateRoute>}
-            />
+            /> */}
           </Routes>
           <Gototop />
-        </BrowserRouter>
       </UserContext.Provider>
     </div>
   );
 }
 
 export default App;
+
+
+// https://rahat-8dac0.web.app/

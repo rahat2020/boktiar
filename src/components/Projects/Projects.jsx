@@ -11,7 +11,7 @@ export default function Projects() {
     // useEffect(() => { setPd(products) }, [setPd]);
     useEffect(() => {
         const getPost = async () => {
-            const res = await axios.get('https://boktiar.herokuapp.com/post/getPost')
+            const res = await axios.get('http://localhost:5000/post/getPost')
             // console.log(res)
             setPd(res.data)
         }

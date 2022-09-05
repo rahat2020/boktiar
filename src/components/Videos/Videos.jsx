@@ -13,7 +13,7 @@ const Videos = () => {
     // console.log(vid)
     useEffect(() => {
         const getPost = async () => {
-            const res = await axios.get('https://boktiar.herokuapp.com/post/getPost')
+            const res = await axios.get('http://localhost:5000/post/getPost')
             setVid(res.data)
         }
         getPost()

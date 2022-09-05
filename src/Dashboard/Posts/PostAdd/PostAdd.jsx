@@ -32,14 +32,14 @@ const StudentAdd = () => {
             data.append("file", file);
             newPost.photo = filename;
             try {
-                await axios.post("https://boktiar.herokuapp.com/post/upload", data);
+                await axios.post("http://localhost:5000/post/upload", data);
             } catch (err) {
                 console.log(err, 'file img submit failed');
             }
         }
 
         try {
-            const res = await axios.post("https://boktiar.herokuapp.com/post/newPost", newPost, config);
+            const res = await axios.post("http://localhost:5000/post/newPost", newPost, config);
             console.log(res)
             res.data && Swal.fire({
                 icon: 'success',

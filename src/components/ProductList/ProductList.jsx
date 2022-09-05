@@ -8,7 +8,7 @@ export default function ProductList() {
     const [pd, setPd] = useState([])
     // console.log(pd)
     useEffect(() => {
-        const url = `https://boktiar.herokuapp.com/post/getPost`;
+        const url = `http://localhost:5000/post/getPost`;
         fetch(url)
             .then(response => response.json())
             .then(data => setPd(data));

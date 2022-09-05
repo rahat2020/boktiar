@@ -1,4 +1,5 @@
 import { createContext, useEffect, useReducer } from "react";
+import jwt_decode from "jwt-decode";
 
 const INITIAL_STATE = {
   user: JSON.parse(localStorage.getItem("lists")) || null,
@@ -6,6 +7,9 @@ const INITIAL_STATE = {
   loading: false,
   error: null,
 };
+
+const authToken = JSON.parse(localStorage.getItem('token'))
+const decoded = jwt_decode(authToken)
 
 export const AuthContext = createContext(INITIAL_STATE);
 
@@ -53,6 +57,7 @@ export const AuthContextProvider = ({ children }) => {
         user: state.user,
         loading: state.loading,
         error: state.error,
+        decoded,
         dispatch,
       }}
     >

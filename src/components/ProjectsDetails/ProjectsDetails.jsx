@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Particles from "react-tsparticles";
 
 export default function ProjectsDetails({ item }) {
-    const pic = "https://boktiar.herokuapp.com/images/";
+    const pic = "http://localhost:5000/images/";
 
     const { name, modalId, link, technologies, details, type, id, gitHubServer, gitHubClient, photo } = item;
 

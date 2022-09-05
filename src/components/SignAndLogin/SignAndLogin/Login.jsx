@@ -35,7 +35,7 @@ const Login = () => {
     // console.log(loginobj)
     try {
       dispatch({ type: "LOGIN_START" });
-      const res = await axios.post("https://boktiar.herokuapp.com/auth/login", loginobj)
+      const res = await axios.post("http://localhost:5000/auth/login", loginobj)
       // console.log(res)
       res.data && Swal.fire({
         icon: 'success',

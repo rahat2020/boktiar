@@ -16,7 +16,7 @@ const Forgotpass = () => {
     }
 
     try {
-      const result = await axios.post("https://boktiar.herokuapp.com/auth/forgotpass", forgotobj)
+      const result = await axios.post("http://localhost:5000/auth/forgotpass", forgotobj)
       console.log(result)
       setHide(!hide)
       setPass(result.data)

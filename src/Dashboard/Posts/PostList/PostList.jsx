@@ -9,10 +9,10 @@ const StudentList = () => {
   const [fetchData, setFetchData] = useState([])
   // console.log('post data', fetchData)
 
-  const pic = "https://boktiar.herokuapp.com/images/";
+  const pic = "http://localhost:5000/images/";
 
   useEffect(() => {
-    const url = `https://boktiar.herokuapp.com/post/getPost`
+    const url = `http://localhost:5000/post/getPost`
     fetch(url)
       .then(res => res.json())
       .then(data => setFetchData(data))
@@ -21,7 +21,7 @@ const StudentList = () => {
   ///////////////////////////////// DELETE SINGLE POST FROM POST LIST ///////////////////////////////////////
   const handleDeletePost = (id) => {
     // console.log(id)
-    fetch(`https://boktiar.herokuapp.com/post/delete/${id}`, {
+    fetch(`http://localhost:5000/post/delete/${id}`, {
       method: 'DELETE'
     })
       .then(res => {

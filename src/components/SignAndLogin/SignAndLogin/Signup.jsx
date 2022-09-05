@@ -25,7 +25,7 @@ const Login = () => {
     console.log(adminobj)
 
     try {
-      const res = await axios.post("https://boktiar.herokuapp.com/auth/register", adminobj);
+      const res = await axios.post("http://localhost:5000/auth/register", adminobj);
       console.log(res)
       res.data && Swal.fire({
         icon: 'success',
