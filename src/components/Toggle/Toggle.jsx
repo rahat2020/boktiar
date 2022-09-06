@@ -5,7 +5,7 @@ import sun from '../../img/sun.png';
 
 export default function Toggle() {
     const [theme, setTheme] = useState("light-theme")
-    console.log(theme)
+    // console.log(theme)
     const handleClick = () => {
         if (theme === "dark-theme") {
             setTheme("light-theme")

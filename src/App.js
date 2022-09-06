@@ -23,6 +23,7 @@ import AboutMe from "./components/AboutMe/AboutMe";
 import Contact from "./components/Contact/ContactMe";
 
 import Gototop from "./components/Gototop/Gototop";
+import jwt_decode from "jwt-decode";
 import { AuthContext } from "./Context/AuthContext";
 // import { ThemeContext } from "./Context/Context";
 
@@ -35,15 +36,16 @@ function App() {
   // console.log(darkMode)
   // const [loggedInUser, setLoggedInUser] = useState({})
   const { user, decoded } = useContext(AuthContext)
-  // console.log(decoded)
+  const token = jwt_decode(user.token)
+  console.log(token)
 
 
   return (
     <div className="app">
-      <MessengerCustomerChat
+      {/* <MessengerCustomerChat
         pageId="101340032265864"
         appId="453100279489200"
-      />
+      /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/allProjects" element={<Projects />} />
