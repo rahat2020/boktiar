@@ -54,17 +54,17 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgotpass" element={<Forgotpass />} />
 
-        {/* <Route path="/dashboard" element={<Dashbaord />} />
-            <Route path="/admin" element={<AdminDash />} />
-            <Route path="/allposts" element={<Forgotpass />} />
-            <Route path="/addpost" element={<PostAdd />} />
-            <Route path="/singlepost/:_id" element={<PostView />} />
-            <Route path="/addreview" element={<AddReview />} />
-            <Route path="/postedit" element={<PostEdit />} /> */}
+        <Route path="/dashboard" element={<Dashbaord />} />
+        <Route path="/admin" element={<AdminDash />} />
+        <Route path="/allposts" element={<Forgotpass />} />
+        <Route path="/addpost" element={<PostAdd />} />
+        <Route path="/singlepost/:_id" element={<PostView />} />
+        <Route path="/addreview" element={<AddReview />} />
+        <Route path="/postedit" element={<PostEdit />} />
 
         {/* DASHBOARD */}
 
-        <Route path="/dashboard" element=
+        {/* <Route path="/dashboard" element=
           {
             user ?
               <Dashbaord />
@@ -114,7 +114,8 @@ function App() {
             :
             <Home />
         }
-        />
+        /> */}
+
       </Routes>
       <Gototop />
       {/* </UserContext.Provider> */}
