@@ -74,28 +74,28 @@ function App() {
         />
 
         <Route path="/admin" element={
-          decoded.isAdmin === true ?
+          decoded?.isAdmin === true ?
             <AdminDash />
             :
             <Home />
         }
         />
         <Route path="/allposts" element={
-          decoded.isAdmin === true ?
+          decoded?.isAdmin === true ?
             <PostList />
             :
             <Home />
         }
         />
         <Route path="/addpost" element={
-          decoded.isAdmin === true ?
+          decoded?.isAdmin === true ?
             <PostAdd />
             :
             <Home />
         }
         />
         <Route path="/singlepost/:_id" element={
-          decoded.isAdmin === true ?
+          decoded?.isAdmin === true ?
             <PostView />
             :
             <Home />
@@ -109,7 +109,7 @@ function App() {
         }
         />
         <Route path="/postedit" element={
-          decoded.isAdmin === true ?
+          decoded?.isAdmin === true ?
             <PostEdit />
             :
             <Home />
