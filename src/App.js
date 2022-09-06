@@ -35,6 +35,7 @@ function App() {
   // const darkMode = theme.state.darkMode;
   // console.log(darkMode)
   // const [loggedInUser, setLoggedInUser] = useState({})
+  
   const { user, decoded } = useContext(AuthContext)
   const token = jwt_decode(user.token)
   console.log(token)

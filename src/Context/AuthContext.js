@@ -8,8 +8,8 @@ const INITIAL_STATE = {
   error: null,
 };
 
-const authToken = JSON.parse(localStorage.getItem('token'))
-const decoded = jwt_decode(authToken)
+// const authToken = JSON.parse(localStorage.getItem('token'))
+// const decoded = jwt_decode(authToken)
 
 export const AuthContext = createContext(INITIAL_STATE);
 
@@ -57,7 +57,6 @@ export const AuthContextProvider = ({ children }) => {
         user: state.user,
         loading: state.loading,
         error: state.error,
-        decoded,
         dispatch,
       }}
     >
