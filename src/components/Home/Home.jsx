@@ -21,7 +21,7 @@ export default function Home() {
             <About />
             <Skill />
             <ProductList />
-            {/* <Videos/> */}
+            <Videos/>
             <Blogs />
             <Testimonial />
             <Contact />

@@ -1,30 +1,29 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 // import { UserContext } from '../../App';
 import { AuthContext } from '../../Context/AuthContext';
 import userimg from '../../img/proMe.png';
 import './Sidebar.css';
 import Welcome from './Welcome';
-import jwt_decode from "jwt-decode";
 
 const Sidebar = () => {
     const [show, setShow] = useState(false);
     const [open, setOpen] = useState(false)
     const [topen, setTopen] = useState(false)
+    const [revpen, setRevpen] = useState(false)
     // const [sopen, setSopen] = useState(false)
     const [suopen] = useState(false)
     const [writePpen, setWritePpen] = useState(false)
+    const navigate = useNavigate();
     // const [ user] = useContext(UserContext)
 
-    const authToken = JSON.parse(localStorage.getItem('token'))
-    const decoded = jwt_decode(authToken)
-
-    const {user, dispatch} = useContext(AuthContext)
+    const { user, dispatch, decodedTkn } = useContext(AuthContext)
     const handleLogout = () => {
         dispatch({ type: "LOGOUT" })
+        navigate('/login')
     }
 
-    
+
     return (
         // <main id="sidebar" className="spaceToggle">
         <>
@@ -67,7 +66,7 @@ const Sidebar = () => {
                             <div className="navList">
 
                                 {
-                                    decoded.isAdmin === true ?
+                                    decodedTkn.isAdmin === true ?
                                         <>
                                             {/* ADMIN DASHBOARD */}
                                             <div className={open ? "sidebar-item open" : "sidebar-item"}>
@@ -97,6 +96,19 @@ const Sidebar = () => {
                                                     <li className="sidebar-submenu"><Link to="/dashboard" id="post-li">Single Post</Link></li>
                                                     <li className="sidebar-submenu"><Link to="/addpost" id="post-li">Post add</Link></li>
                                                     <li className="sidebar-submenu"><Link to="/postedit" id="post-li">Post edit</Link></li>
+                                                </ul>
+                                            </div>
+
+                                            <div className={revpen ? "sidebar-item open" : "sidebar-item"}>
+                                                <span className="sidebar-title navLink">
+                                                    <span className="">
+                                                        <i className="fa-solid fa-envelopes-bulk" id="navLinkIcon"></i>
+                                                        Reviews
+                                                    </span>
+                                                    <i className="fa-solid fa-angle-down toggle-btn" onClick={() => setRevpen(!revpen)}></i>
+                                                </span>
+                                                <ul className="sidebar-content">
+                                                    <li className="sidebar-submenu"><Link to="/mangeReview" id="post-li">Review Mangement</Link></li>
                                                 </ul>
                                             </div>
 
@@ -138,7 +150,7 @@ const Sidebar = () => {
                                 {/* LOGOUT */}
                                 <div className={suopen ? "sidebar-item open" : "sidebar-item"}>
                                     <span className="sidebar-title navLink">
-                                        <span onClick={handleLogout} style={{cursor: "pointer"}}>
+                                        <span onClick={handleLogout} style={{ cursor: "pointer" }}>
                                             <i className="fa-solid fa-right-from-bracket" id="navLinkIcon"></i>
                                             Logout
                                         </span>

@@ -133,7 +133,7 @@ const AdminDash = () => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className={classes.tableWrapprer}>
-                                    <p className={classes.starTitle}>Star students</p>
+                                    <p className={classes.starTitle}>Users</p>
                                     <table className="table border">
                                         <thead>
                                             <tr className="text-center">
@@ -174,12 +174,6 @@ const AdminDash = () => {
 
                         {/* ADD ADMIN */}
                         <div className={classes.TeacherAdd}>
-                            <div className={classes.teacherTitle}>
-                                <div className="colLeft">
-                                    <h2 className={classes.title}>Add Admin</h2>
-                                    <strong className={classes.firstTitle}>Dashboard / <span className={classes.scndTitle}>add admin</span></strong>
-                                </div>
-                            </div>
 
                             {/* Teacher add forms */}
                             <div className="mt-3">
@@ -187,7 +181,7 @@ const AdminDash = () => {
                                     {/* basic details */}
                                     <>
                                         <div className={classes.bdtails}>
-                                            <h3>Basic Details</h3>
+                                            <h3>User Details</h3>
                                             <div className={classes.line} />
                                         </div>
                                         <form className="row g-3" onSubmit={handleSubmit}>
@@ -209,11 +203,8 @@ const AdminDash = () => {
                                             </div>
                                             <div className="col-md-12">
                                                 <label htmlFor="inputZip" className="form-label">Admin Image</label>
-                                                <div className="d-flex justify-content-start align-items-start">
-                                                    {/* {file && (
-                                                        <img className={classes.regImg} src={URL.createObjectURL(file)} alt="" />
-                                                    )} */}
-                                                    <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+                                                <div className="d-flex justify-content-center align-items-center">
+                                                    <input type="file" onChange={(e) => setFile(e.target.files[0])} className="form-control"/>
                                                 </div>
                                             </div>
                                             <div className="col-12 mb-4">

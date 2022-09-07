@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import './App.css';
 import {
   Routes,
@@ -18,16 +18,13 @@ import Signup from "./components/SignAndLogin/SignAndLogin/Signup";
 // import PrivateRoute from "./components/SignAndLogin/PrivateRoute/PrivateRoute";
 import Home from "./components/Home/Home";
 import AddReview from "./Dashboard/AddReview/AddReview";
+import ReviewManage from "./Dashboard/ReviewManage/ReviewManage";
 import Forgotpass from "./components/SignAndLogin/Forgotpass/Forgotpass";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Contact from "./components/Contact/ContactMe";
-
 import Gototop from "./components/Gototop/Gototop";
-import jwt_decode from "jwt-decode";
 import { AuthContext } from "./Context/AuthContext";
-// import { ThemeContext } from "./Context/Context";
 
-// export const UserContext = createContext()
 
 function App() {
 
@@ -35,18 +32,19 @@ function App() {
   // const darkMode = theme.state.darkMode;
   // console.log(darkMode)
   // const [loggedInUser, setLoggedInUser] = useState({})
-  
-  const { user, decoded } = useContext(AuthContext)
-  const token = jwt_decode(user.token)
-  console.log(token)
+
+  const { user,decodedTkn } = useContext(AuthContext)
+  console.log('decodedTkn',decodedTkn)
+
+
 
 
   return (
     <div className="app">
-      {/* <MessengerCustomerChat
+      <MessengerCustomerChat
         pageId="101340032265864"
         appId="453100279489200"
-      /> */}
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/allProjects" element={<Projects />} />
@@ -57,52 +55,13 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgotpass" element={<Forgotpass />} />
 
-        <Route path="/dashboard" element={<Dashbaord />} />
-        <Route path="/admin" element={<AdminDash />} />
-        <Route path="/allposts" element={<Forgotpass />} />
-        <Route path="/addpost" element={<PostAdd />} />
-        <Route path="/singlepost/:_id" element={<PostView />} />
-        <Route path="/addreview" element={<AddReview />} />
-        <Route path="/postedit" element={<PostEdit />} />
-
-        {/* DASHBOARD */}
-
-        {/* <Route path="/dashboard" element=
+        <Route path="/dashboard" element=
           {
             user ?
               <Dashbaord />
               :
               <Login />
           }
-        />
-
-        <Route path="/admin" element={
-          decoded?.isAdmin === true ?
-            <AdminDash />
-            :
-            <Home />
-        }
-        />
-        <Route path="/allposts" element={
-          decoded?.isAdmin === true ?
-            <PostList />
-            :
-            <Home />
-        }
-        />
-        <Route path="/addpost" element={
-          decoded?.isAdmin === true ?
-            <PostAdd />
-            :
-            <Home />
-        }
-        />
-        <Route path="/singlepost/:_id" element={
-          decoded?.isAdmin === true ?
-            <PostView />
-            :
-            <Home />
-        }
         />
         <Route path="/addreview" element={
           user ?
@@ -111,18 +70,55 @@ function App() {
             <Login />
         }
         />
+
+        <Route path="/admin" element={
+          decodedTkn?.isAdmin === true ?
+            <AdminDash />
+            :
+            <Home />
+        }
+        />
+        
+        <Route path="/allposts" element={
+          decodedTkn.isAdmin === true ?
+            <PostList />
+            :
+            <Home />
+        }
+        />
+        <Route path="/addpost" element={
+          decodedTkn.isAdmin === true ?
+            <PostAdd />
+            :
+            <Home />
+        }
+        />
+        <Route path="/singlepost/:_id" element={
+          decodedTkn.isAdmin === true ?
+            <PostView />
+            :
+            <Home />
+        }
+        />
+
         <Route path="/postedit" element={
-          decoded?.isAdmin === true ?
+          decodedTkn.isAdmin === true ?
             <PostEdit />
             :
             <Home />
         }
-        /> */}
+        />
+        <Route path="/mangeReview" element={
+          decodedTkn.isAdmin === true ?
+            <ReviewManage/>
+            :
+            <Home />
+        }
+        />
 
       </Routes>
       <Gototop />
-      {/* </UserContext.Provider> */}
-    </div>
+    </div >
   );
 }
 
