@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 const StudentView = () => {
     const pic = "https://boktiar.herokuapp.com/images/";
     const [singlePost, setsinglePost] = useState([])
-    // console.log('single post', singlePost)
+    // console.log('single post', singlePost.photo)
     // const [post, setPost] = useState({})
     const { _id } = useParams()
 
@@ -41,22 +41,25 @@ const StudentView = () => {
     const config = {
         headers: {token: `Bearer ${JSON.parse(localStorage.getItem('token'))}`}
     }
+    console.log(config)
     const handleUpdate = async () => {
+        const postObj = {
+            name,
+            modalId,
+            photo:singlePost.photo,
+            type,
+            link,
+            gitHubClient,
+            gitHubServer,
+            technologies,
+            details,
+        }
+        console.log(postObj)
         try {
-            const res = await axios.put(`https://boktiar.herokuapp.com/post/update/${singlePost._id}`, config, {
-                name,
-                modalId,
-                type,
-                link,
-                gitHubClient,
-                gitHubServer,
-                technologies,
-                details,
-            })
+            const res = await axios.put(`https://boktiar.herokuapp.com/post/update/${singlePost._id}`,postObj, config)
             res && Swal.fire({
                 icon: 'success',
-                title: 'User updated Successfully',
-                text: 'To See The Changes Reload The Page',
+                title: 'Post updated Successfully',
             })
             console.log(res)
         } catch (err) {
@@ -88,7 +91,7 @@ const StudentView = () => {
                     </div>
                     <div className={classes.biodata}>
                         <div className={classes.imgConatiner}>
-                            <img src={pic + singlePost.photo} alt="img" className={classes.myImg} />
+                            <img src={singlePost ? pic + singlePost.photo : "not found"} alt="img" className={classes.myImg} />
                         </div>
                         <div className={classes.mydata}>
                             <div className={classes.colLeft}>

@@ -44,7 +44,7 @@ const Login = () => {
       })
       // setLoggedInUser(res.data);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
-      localStorage.setItem("token", JSON.stringify(res.data.token))
+      localStorage.setItem("token", JSON.stringify(res.data.access_token))
       // navigate("/dash");
       navigate(from.pathname);
     } catch (err) {

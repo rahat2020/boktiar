@@ -3,6 +3,7 @@ import Sidebar from '../../Sidebar/Sidebar';
 import classes from './PostList.module.css';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const StudentList = () => {
   // FETCHING DATA FROM DATABASE
@@ -19,18 +20,24 @@ const StudentList = () => {
   }, [])
 
   ///////////////////////////////// DELETE SINGLE POST FROM POST LIST ///////////////////////////////////////
-  const handleDeletePost = (id) => {
-    // console.log(id)
-    fetch(`https://boktiar.herokuapp.com/post/delete/${id}`, {
-      method: 'DELETE'
-    })
-      .then(res => {
-        res && Swal.fire({
-          icon: 'success',
-          title: 'User Deleted Successfully',
-          text: 'To See The Changes Reload The Page',
-        })
+  const config = {
+    headers: { token: `Bearer ${JSON.parse(localStorage.getItem('token'))}` }
+  }
+  const handleDeletePost = async (id) => {
+    try {
+      const res = await axios.delete(`https://boktiar.herokuapp.com/post/delete/${id}`, config)
+      console.log(res)
+      res && Swal.fire({
+        icon: 'success',
+        title: 'Post Deleted'
       })
+    } catch (err) {
+      console.log(err)
+      err && Swal.fire({
+        icon: 'error',
+        title: 'post not deleted',
+      })
+    }
   }
 
 

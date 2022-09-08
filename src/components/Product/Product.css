@@ -7,6 +7,9 @@
     overflow: hidden;
 }
 
+.pl__shadows{
+    box-shadow: 1px 1px 1rem #a8a8a869;
+}
 .p-browser{
     height: 20px;
     background-color: rgb(221, 211, 211);
@@ -25,6 +28,7 @@
 .p-img{
     width: 100%;
     transition: all 10s ease;
+    box-shadow: 1px 1px 1rem #a8a8a869;
 }
 .p:hover .p-img{
     transform: translateY(-100%);

@@ -20,6 +20,12 @@
 .dark-theme h5{
     color: #afafaf;
 }
+.dark-theme label{
+    color: #302f2f;
+}
+.dark-theme small{
+    color: #0d6efd;
+}
 .light-theme{
     background-color: #fff;
 }

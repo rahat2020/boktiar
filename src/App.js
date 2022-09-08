@@ -34,17 +34,17 @@ function App() {
   // const [loggedInUser, setLoggedInUser] = useState({})
 
   const { user,decodedTkn } = useContext(AuthContext)
-  console.log('decodedTkn',decodedTkn)
+  // console.log('decodedTkn',decodedTkn)
 
 
 
 
   return (
     <div className="app">
-      <MessengerCustomerChat
+      {/* <MessengerCustomerChat
         pageId="101340032265864"
         appId="453100279489200"
-      />
+      /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/allProjects" element={<Projects />} />

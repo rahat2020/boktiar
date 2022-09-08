@@ -11,6 +11,7 @@ const StudentAdd = () => {
     const config = {
         headers: {token: `Bearer ${JSON.parse(localStorage.getItem('token'))}`}
     }
+    console.log(config)
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newPost = {
@@ -41,13 +42,18 @@ const StudentAdd = () => {
         try {
             const res = await axios.post("https://boktiar.herokuapp.com/post/newPost", newPost, config);
             console.log(res)
-            res.data && Swal.fire({
+            res && Swal.fire({
                 icon: 'success',
                 title: 'Post Added Successfully',
-                text: 'To see go home page',
+                text: 'To see go post list',
             })
         } catch (err) {
             console.log(err, 'form submit failed');
+            err && Swal.fire({
+                icon: 'error',
+                title: "Post didn't added",
+                text:"Check every feild"
+            })
         }
     }
 
@@ -115,11 +121,11 @@ const StudentAdd = () => {
                                         {file && (
                                             <img className={classes.regImg} src={URL.createObjectURL(file)} alt="" />
                                         )}
-                                        <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+                                        <input type="file" onChange={(e) => setFile(e.target.files[0])} className="form-control"/>
                                     </div>
                                 </div>
                                 <div className="col-12 mb-4">
-                                    <button type="submit" className="btn btn-warning text-white fw-bold">Submit</button>
+                                    <button type="submit" className="btn btn-danger text-white fw-bold">Add Post</button>
                                 </div>
                             </form>
                         </>

@@ -79,11 +79,11 @@ export default function Contact() {
                         <b>What’s your story?</b> Get in touch. Always available for
                         freelancing if the right project comes along. me.
                     </p>
-                    <form action="" ref={formRef} onSubmit={SubThis}>
-                        <input type="text" placeholder="Name" name="user_name" required/>
-                        <input type="text" placeholder="Subject" name="user_subject" />
-                        <input type="text" placeholder="Email" name="user_email" required/>
-                        <textarea id="" cols="20" rows="4" placeholder="message" name="message" />
+                    <form action="" ref={formRef} onSubmit={SubThis} className="form-control border-0">
+                        <input type="text" placeholder="Name" name="user_name" required className="form-control"/>
+                        <input type="text" placeholder="Subject" name="user_subject"  className="form-control"/>
+                        <input type="text" placeholder="Email" name="user_email" required className="form-control"/>
+                        <textarea id="" cols="20" rows="4" placeholder="message" name="message"  className="form-control"/>
                         <button className="btn-submit">Submit</button>
                         {/* {
                             done && "Thank you for your email"
