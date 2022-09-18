@@ -12,7 +12,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function ProjectsDetails({ item }) {
-    const pic = "https://boktiar.herokuapp.com/images/";
+    const pic = " https://boktiar.herokuapp.com/images/";
 
     console.log(item)
     const { name, modalId, link, technologies, details, type, _id, gitHubServer, gitHubClient, photo } = item;

@@ -3,6 +3,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import classes from './AdminDash.module.css';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const AdminDash = () => {
     const [course, setCourse] = useState([])
@@ -11,7 +12,7 @@ const AdminDash = () => {
     // const PP = 'http:localhost:5000/images';
 
     useEffect(() => {
-        const url = `https://boktiar.herokuapp.com/auth/admin`
+        const url = ` https://boktiar.herokuapp.com/auth/admin`
         fetch(url)
             .then(data => data.json())
             .then(data => setCourse(data))
@@ -19,7 +20,7 @@ const AdminDash = () => {
 
     // FORM SUBMIT
     const config = {
-        headers: {token:`Bearer ${JSON.parse(localStorage.getItem('token'))}`}
+        headers: { token: `Bearer ${JSON.parse(localStorage.getItem('token'))}` }
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -37,14 +38,14 @@ const AdminDash = () => {
             adminobj.photo = filename;
 
             try {
-                await axios.post("https://boktiar.herokuapp.com/auth/upload", data);
+                await axios.post(" https://boktiar.herokuapp.com/auth/upload", data);
             } catch (err) {
                 console.log(err, 'file img submit failed');
             }
         }
 
         try {
-            const res = await axios.post("https://boktiar.herokuapp.com/auth/register", adminobj, config)
+            const res = await axios.post(" https://boktiar.herokuapp.com/auth/register", adminobj, config)
             res.data && Swal.fire({
                 icon: 'success',
                 title: 'Admin Added Successfully',
@@ -59,19 +60,19 @@ const AdminDash = () => {
         alert('remmeber this secret code for forgot password')
     }
 
-    
-  ///////////////////////////// DELETE  ADMIN /////////////////////////////////////////////////////
-  const handleDeleteAdmin = async(id) => {
-    try{
-        const res = await axios.delete(`https://boktiar.herokuapp.com/auth/delete/${id}`, config)
-        res && Swal.fire({
-            icon: 'success',
-            text:'admin deleted successfully'
-        })
-    } catch (err) {
-        console.log(err)
+
+    ///////////////////////////// DELETE  ADMIN /////////////////////////////////////////////////////
+    const handleDeleteAdmin = async (id) => {
+        try {
+            const res = await axios.delete(` https://boktiar.herokuapp.com/auth/delete/${id}`, config)
+            res && Swal.fire({
+                icon: 'success',
+                text: 'User deleted successfully'
+            })
+        } catch (err) {
+            console.log(err)
+        }
     }
-  }
     return (
         <>
             <Sidebar />
@@ -159,7 +160,9 @@ const AdminDash = () => {
                                                         <td data-title="PASS" className={classes.tdata}>ignanna</td>
                                                         <td data-title="ACTIONS" className={classes.tdata}>
                                                             <div className={classes.action}>
-                                                                <button className={classes.btnEdit}><i className="fa-solid fa-pen"></i></button>
+                                                                <Link to={`/user/${item._id}`}>
+                                                                    <button className={classes.btnEdit}><i className="fa-solid fa-pen"></i></button>
+                                                                </Link>
                                                                 <button className={classes.btnDelete} onClick={() => handleDeleteAdmin(item._id)}><i className="fa-solid fa-trash"></i></button>
                                                             </div>
                                                         </td>
@@ -204,7 +207,7 @@ const AdminDash = () => {
                                             <div className="col-md-12">
                                                 <label htmlFor="inputZip" className="form-label">Admin Image</label>
                                                 <div className="d-flex justify-content-center align-items-center">
-                                                    <input type="file" onChange={(e) => setFile(e.target.files[0])} className="form-control"/>
+                                                    <input type="file" onChange={(e) => setFile(e.target.files[0])} className="form-control" />
                                                 </div>
                                             </div>
                                             <div className="col-12 mb-4">

@@ -47,7 +47,7 @@ const Sidebar = () => {
                             <div className="dropdown">
                                 <span type="span" className="dropdown-toggle" data-bs-toggle="dropdown" />
                                 <ul className="dropdown-menu">
-                                    <li><Link to="/dashboard" className="dropdown-item navLink">My Profile</Link></li>
+                                    <li><Link to={`/user/${user._id}`} className="dropdown-item navLink">My Profile</Link></li>
                                     <li><Link to="/dashboard" className="dropdown-item navLink">Logout</Link></li>
                                 </ul>
                             </div>

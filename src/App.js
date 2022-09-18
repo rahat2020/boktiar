@@ -24,6 +24,7 @@ import AboutMe from "./components/AboutMe/AboutMe";
 import Contact from "./components/Contact/ContactMe";
 import Gototop from "./components/Gototop/Gototop";
 import { AuthContext } from "./Context/AuthContext";
+import SingleUserview from "./Dashboard/SingleUserview/SingleUserview";
 
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
   // console.log(darkMode)
   // const [loggedInUser, setLoggedInUser] = useState({})
 
-  const { user,decodedTkn } = useContext(AuthContext)
+  const { user, decodedTkn } = useContext(AuthContext)
   // console.log('decodedTkn',decodedTkn)
 
 
@@ -70,6 +71,13 @@ function App() {
             <Login />
         }
         />
+        <Route path="/user/:id" element={
+          user ?
+            <SingleUserview />
+            :
+            <Home />
+        }
+        />
 
         <Route path="/admin" element={
           decodedTkn?.isAdmin === true ?
@@ -78,7 +86,7 @@ function App() {
             <Home />
         }
         />
-        
+
         <Route path="/allposts" element={
           decodedTkn.isAdmin === true ?
             <PostList />
@@ -110,7 +118,7 @@ function App() {
         />
         <Route path="/mangeReview" element={
           decodedTkn.isAdmin === true ?
-            <ReviewManage/>
+            <ReviewManage />
             :
             <Home />
         }

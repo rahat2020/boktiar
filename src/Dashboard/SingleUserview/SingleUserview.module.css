@@ -1,0 +1,266 @@
+.teacherView {
+    padding: 6.55rem;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.title {
+    color: #010d13c9;
+    font-weight: 700;
+}
+
+.teacherTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.firstTitle {
+    font-size: 1.11rem;
+}
+
+.scndTitle {
+    color: #928d90;
+    letter-spacing: 1px;
+}
+
+.posthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnEdit {
+    border: none;
+    padding: 5px 15px;
+    background-color: #0ea9f7;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* about style */
+
+.tView {
+    border: 0.99px #b4b1b391;
+    height: auto;
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px 0px rgba(232, 221, 224, 0.75);
+    -webkit-box-shadow: 1px 1px 8px 0px rgba(232, 221, 224, 0.75);
+    -moz-box-shadow: 1px 1px 8px 0px rgba(232, 221, 224, 0.75);
+}
+
+.abtme {
+    color: #000000cb;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+.biodata {
+    max-width: 900px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.imgConatiner {
+    width: 11rem;
+    height: 11rem;
+    margin-top: 1rem;
+}
+
+.myImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mydata {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    margin-left: 20px;
+    /* border: 1px solid #000000cb; */
+}
+
+.colLeft {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #000000cb;
+    letter-spacing: .3px;
+    /* border: 1px solid #000000cb; */
+}
+
+.reucegap {
+    gap: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    flex-direction: column;
+    margin-left: 40px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #000000cb;
+    letter-spacing: .3px;
+}
+.increasegap{
+    gap: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    flex-direction: column;
+    margin-left: 40px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #000000cb;
+    letter-spacing: .3px;
+}
+.name {
+    width: 12rem;
+    height: 20px;
+    border: 1px solid #000000cb;
+    color: #000000cb;
+}
+.secretCode{
+    width: 12rem;
+    height: 20px;
+    border: 1px solid #000000cb;
+    color: #000000cb;
+}
+.email {
+    width: 12rem;
+    height: 20px;
+    border: 1px solid #000000cb;
+    color: #000000cb;
+}
+
+.pass {
+    width: 17rem;
+    height: 20px;
+    border: 1px solid #000000cb;
+}
+
+.technologies {
+    width: 15rem;
+    height: 3rem;
+}
+
+.colRight {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 40px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #000000cb;
+    letter-spacing: .3px;
+}
+
+.data {
+    text-align: left;
+}
+
+/* F (follower, following, friends) styles */
+
+.fCount {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fcontainer {
+    width: 350px;
+    height: 150px;
+    background-color: #18AEFA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.fData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* responsive style */
+@media only screen and (max-width:468px) {
+    .teacherView {
+        padding: 3rem;
+        margin-left: 2.87rem;
+        width: 90%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .tView {
+        padding: 0rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: none;
+    }
+
+    .titleContainer {
+        margin-left: .77rem;
+    }
+
+    .biodata,
+    #loremData,
+    .fCount,
+    #tvaddress,
+    .skTitle {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .colLeft,
+    .colRight,
+    #loremData,
+    .skTitle {
+        margin-top: 1rem;
+        font-size: 0.88em !important;
+        text-align: justify;
+    }
+
+    #loremData,
+    #tvaddress,
+    .skTitle {
+        /* margin-left: 1rem; */
+        max-width: 300px;
+    }
+
+    .fcontainer {
+        margin-bottom: 1rem;
+        max-width: 300px;
+    }
+
+    .settings {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        max-width: 300px;
+    }
+
+}
