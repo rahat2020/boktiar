@@ -31,6 +31,7 @@ const StudentList = () => {
         icon: 'success',
         title: 'Post Deleted'
       })
+    
     } catch (err) {
       console.log(err)
       err && Swal.fire({
@@ -52,7 +53,9 @@ const StudentList = () => {
           </div>
           <div className={classes.colRight}>
             <button className={classes.btnDwnld}><i className="fa-solid fa-download me-2"></i>Download</button>
-            <button className={classes.plus}><i className="fa-solid fa-plus"></i></button>
+            <Link to="/addpost">
+              <button className={classes.plus}><i className="fa-solid fa-plus"></i></button>
+            </Link>
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Sidebar from '../../Sidebar/Sidebar';
 import classes from './PostAdd.module.css';
@@ -8,8 +9,9 @@ const StudentAdd = () => {
 
     // ADDING FORM DATA  TO THE DASHBOARD
     const [file, setFile] = useState(null);
+    const navigate = useNavigate();
     const config = {
-        headers: {token: `Bearer ${JSON.parse(localStorage.getItem('token'))}`}
+        headers: { token: `Bearer ${JSON.parse(localStorage.getItem('token'))}` }
     }
     console.log(config)
     const handleSubmit = async (e) => {
@@ -47,12 +49,13 @@ const StudentAdd = () => {
                 title: 'Post Added Successfully',
                 text: 'To see go post list',
             })
+            navigate("/allposts")
         } catch (err) {
             console.log(err, 'form submit failed');
             err && Swal.fire({
                 icon: 'error',
                 title: "Post didn't added",
-                text:"Check every feild"
+                text: "Check every feild"
             })
         }
     }
@@ -78,54 +81,54 @@ const StudentAdd = () => {
                                 <div className={classes.line} />
                             </div>
                             <form className="row g-3" onSubmit={handleSubmit}>
-                                <div className="col-md-6">
+                                <div className="col-md-4">
                                     <label htmlFor="inputEmail4" className="form-label">Name</label>
                                     <input type="text" className="form-control" id="inputEmail4" name="name" placeholder="name" />
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-md-4">
                                     <label htmlFor="inputPassword4" className="form-label">Modal ID</label>
-                                    <input type="text" className="form-control" id="inputPassword4" name="modalId" placeholder="modalid"/>
+                                    <input type="text" className="form-control" id="inputPassword4" name="modalId" placeholder="modalid" />
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-md-4">
                                     <label htmlFor="inputPassword4" className="form-label">Type</label>
-                                    <input type="text" className="form-control" id="inputPassword4" name="type" placeholder="type"/>
+                                    <input type="text" className="form-control" id="inputPassword4" name="type" placeholder="type" />
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-md-4">
                                     <label htmlFor="inputCity" className="form-label">Live Link</label>
-                                    <input type="text" className="form-control" id="inputCity" name="link"  placeholder="live link" />
+                                    <input type="text" className="form-control" id="inputCity" name="link" placeholder="live link" />
                                 </div>
                                 <div className="col-md-4">
                                     <label htmlFor="inputState" className="form-label">Client Github</label>
-                                    <input type="text" className="form-control" id="inputCity" name="gitHubClient"  placeholder="client github" />
+                                    <input type="text" className="form-control" id="inputCity" name="gitHubClient" placeholder="client github" />
                                 </div>
                                 <div className="col-md-4">
                                     <label htmlFor="inputState" className="form-label">Server Github</label>
-                                    <input type="text" className="form-control" id="inputCity" name="gitHubServer"  placeholder="server github" />
+                                    <input type="text" className="form-control" id="inputCity" name="gitHubServer" placeholder="server github" />
                                 </div>
                                 <div className="col-md-4">
                                     <label htmlFor="inputState" className="form-label">Youtube video</label>
-                                    <input type="text" className="form-control" id="inputCity" name="youtube"  placeholder="youtube video" />
+                                    <input type="text" className="form-control" id="inputCity" name="youtube" placeholder="youtube video" />
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-md-8">
                                     <label htmlFor="inputState" className="form-label">Technologies</label>
-                                    <input type="text" className="form-control" id="inputCity" name="technologies"  placeholder="technologies" />
-                                </div>
-                                <div className="col-md-6">
-                                    <label htmlFor="inputState" className="form-label">Details</label>
-                                    <input type="text" className="form-control" id="inputCity" name="details"  placeholder="details" />
+                                    <input type="text" className="form-control" id="inputCity" name="technologies" placeholder="technologies" />
                                 </div>
                                 <div className="col-md-6">
                                     <label htmlFor="inputZip" className="form-label">Post Image</label>
-                                    {/* <input type="file" className="form-control" id="inputZip" /> */}
                                     <div className="d-flex justify-content-start align-items-start">
                                         {file && (
                                             <img className={classes.regImg} src={URL.createObjectURL(file)} alt="" />
                                         )}
-                                        <input type="file" onChange={(e) => setFile(e.target.files[0])} className="form-control"/>
+                                        <input type="file" onChange={(e) => setFile(e.target.files[0])} className="form-control" />
                                     </div>
                                 </div>
+                                <div className="col-md-6">
+                                    <label htmlFor="inputState" className="form-label">Details</label>
+                                    <textarea type="text" className="form-control" id="inputCity" name="details" placeholder="details" />
+                                </div>
+                               
                                 <div className="col-12 mb-4">
-                                    <button type="submit" className="btn btn-danger text-white fw-bold">Add Post</button>
+                                    <button type="submit"  className="btn btn-danger text-white fw-bold">Add Post</button>
                                 </div>
                             </form>
                         </>
