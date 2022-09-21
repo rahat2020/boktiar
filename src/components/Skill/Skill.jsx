@@ -13,7 +13,7 @@ export default function Skill() {
                         <div className="skill-bars">
                             <div className="bar">
                                 <div className="info">
-                                    <span>React JS</span>
+                                    <span className="skill__title">React JS</span>
                                 </div>
                                 <div className="progress-line html">
                                     <span></span>
@@ -21,7 +21,7 @@ export default function Skill() {
                             </div>
                             <div className="bar">
                                 <div className="info">
-                                    <span>HTML5 and CSS</span>
+                                    <span className="skill__title">HTML5 and CSS</span>
                                 </div>
                                 <div className="progress-line html">
                                     <span></span>
@@ -29,7 +29,7 @@ export default function Skill() {
                             </div>
                             <div className="bar">
                                 <div className="info">
-                                    <span>Bootstrap and React Bootstrap</span>
+                                    <span className="skill__title">Bootstrap and React Bootstrap</span>
                                 </div>
                                 <div className="progress-line html">
                                     <span></span>
@@ -37,7 +37,7 @@ export default function Skill() {
                             </div>
                             <div className="bar">
                                 <div className="info">
-                                    <span>MongoDB</span>
+                                    <span className="skill__title">MongoDB</span>
                                 </div>
                                 <div className="progress-line html">
                                     <span></span>
@@ -45,7 +45,7 @@ export default function Skill() {
                             </div>
                             <div className="bar">
                                 <div className="info">
-                                    <span>Node JS</span>
+                                    <span className="skill__title">Node JS</span>
                                 </div>
                                 <div className="progress-line css">
                                     <span></span>
@@ -58,7 +58,7 @@ export default function Skill() {
                         <div data-aos="fade-up" className="skill-bars">
                             <div className="bar">
                                 <div className="info">
-                                    <span>React Native</span>
+                                    <span className="skill__title">React Native</span>
                                 </div>
                                 <div className="progress-line native">
                                     <span></span>
@@ -66,7 +66,7 @@ export default function Skill() {
                             </div>
                             <div className="bar">
                                 <div className="info">
-                                    <span>Redux</span>
+                                    <span className="skill__title">Redux</span>
                                 </div>
                                 <div className="progress-line redux">
                                     <span></span>
@@ -74,7 +74,7 @@ export default function Skill() {
                             </div>
                             <div className="bar">
                                 <div className="info">
-                                    <span>Material UI</span>
+                                    <span className="skill__title">Material UI</span>
                                 </div>
                                 <div className="progress-line mu">
                                     <span></span>
@@ -82,7 +82,7 @@ export default function Skill() {
                             </div>
                             <div className="bar">
                                 <div className="info">
-                                    <span>JavaScript</span>
+                                    <span className="skill__title">JavaScript</span>
                                 </div>
                                 <div className="progress-line javascript">
                                     <span></span>
@@ -90,7 +90,7 @@ export default function Skill() {
                             </div>
                             <div className="bar">
                                 <div className="info">
-                                    <span>Express JS</span>
+                                    <span className="skill__title">Express JS</span>
                                 </div>
                                 <div className="progress-line express">
                                     <span></span>

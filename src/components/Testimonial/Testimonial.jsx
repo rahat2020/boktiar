@@ -31,12 +31,13 @@ const Testimonial = () => {
             </div>
 
             <AutoplaySlider play={true}
+            className="testi__color"
                 cancelOnInteraction={false} // should stop playing on user interaction
                 interval={6000}>
-
+            
                 {
                     rev.map(item => (
-                        <div className="review" style={{ backgroundColor: "white" }} key={item._id}>
+                        <div className="review"  key={item._id}>
                             <div className="reviewContainer">
                                 <div className="d-flex justify-content-center align-items-center">
                                     <img src={pic + item.photo} alt="" className="avatar" />
