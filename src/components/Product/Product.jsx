@@ -2,7 +2,7 @@ import React from 'react';
 import './Product.css';
 
 export default function Product({photo, link}) {
-    const pic = " https://boktiar.herokuapp.com/images/";
+    // const pic = " https://boktiar.herokuapp.com/images/";
     return (
         <div data-aos="fade-up" className="p mb-5  pl__shadows">
             <p className="p-browser">
@@ -12,7 +12,7 @@ export default function Product({photo, link}) {
             </p>
 
             <a href={link} target="_blank" rel="noreferrer">
-                <img src={pic+ photo} alt="" className="p-img" />
+                <img src={photo} alt="" className="p-img" />
             </a>
         </div>
     )

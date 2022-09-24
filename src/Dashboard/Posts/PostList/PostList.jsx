@@ -31,7 +31,10 @@ const StudentList = () => {
         icon: 'success',
         title: 'Post Deleted'
       })
-    
+      setTimeout(function () {
+        window.location.reload()
+      }, [1000])
+      return clearTimeout(setTimeout())
     } catch (err) {
       console.log(err)
       err && Swal.fire({
@@ -103,7 +106,7 @@ const StudentList = () => {
                       <td data-title="MODAL ID" className={classes.tdata}>{single.modalId}</td>
                       <td data-title="TYPE" className={classes.tdata}>{single.type}</td>
                       <td data-title="IMG" className={classes.tdata}>
-                        <img src={pic + single.photo} alt="post img" className={classes.teacherImg} />
+                        <img src={single.photo} alt="post img" className={classes.teacherImg} />
                       </td>
                       <td data-title="LIVE LINK" className={classes.tdata}>{single.link}</td>
                       <td data-title="ALL DETAILS" className={classes.tdata}>

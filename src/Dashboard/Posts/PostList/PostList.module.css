@@ -93,9 +93,9 @@
     align-items: center !important;
 }
 .teacherImg{
-    widows: 2.55rem;
+    width: 5rem;
     height: 2.55rem;
-    border-radius: 100%;
+    /* border-radius: 100%; */
     margin-right: .86rem;
     object-fit: cover;
     align-items: start;

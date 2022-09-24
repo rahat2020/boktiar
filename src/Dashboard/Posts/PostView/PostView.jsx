@@ -91,7 +91,7 @@ const StudentView = () => {
                     </div>
                     <div className={classes.biodata}>
                         <div className={classes.imgConatiner}>
-                            <img src={singlePost ? pic + singlePost.photo : "not found"} alt="img" className={classes.myImg} />
+                            <img src={singlePost ? singlePost.photo : "not found"} alt="img" className={classes.myImg} />
                         </div>
                         <div className={classes.mydata}>
                             <div className={classes.colLeft}>

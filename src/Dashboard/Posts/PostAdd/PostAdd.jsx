@@ -13,35 +13,45 @@ const StudentAdd = () => {
     const config = {
         headers: { token: `Bearer ${JSON.parse(localStorage.getItem('token'))}` }
     }
-    console.log(config)
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const newPost = {
-            name: e.target.name.value,
-            modalId: e.target.modalId.value,
-            type: e.target.type.value,
-            link: e.target.link.value,
-            gitHubClient: e.target.gitHubClient.value,
-            gitHubServer: e.target.gitHubServer.value,
-            youtube: e.target.youtube.value,
-            technologies: e.target.technologies.value,
-            details: e.target.details.value,
-        }
-        console.log(newPost)
-        if (file) {
-            const data = new FormData();
-            const filename = Date.now() + file.name;
-            data.append("name", filename);
-            data.append("file", file);
-            newPost.photo = filename;
-            try {
-                await axios.post(" https://boktiar.herokuapp.com/post/upload", data);
-            } catch (err) {
-                console.log(err, 'file img submit failed');
-            }
-        }
+
+        // if (file) {
+        //     const data = new FormData();
+        //     const filename = Date.now() + file.name;
+        //     data.append("name", filename);
+        //     data.append("file", file);
+        //     newPost.photo = filename;
+        //     try {
+        //         await axios.post(" https://boktiar.herokuapp.com/post/upload", data);
+        //     } catch (err) {
+        //         console.log(err, 'file img submit failed');
+        //     }
+        // }
+
 
         try {
+            const data = new FormData();
+            data.append("file", file);
+            data.append("upload_preset", "upload");
+            const uploadRes = await axios.post("https://api.cloudinary.com/v1_1/rahatdev1020/image/upload", data)
+            const { url } = uploadRes.data
+            console.log(url)
+            const newPost = {
+                name: e.target.name.value,
+                modalId: e.target.modalId.value,
+                type: e.target.type.value,
+                link: e.target.link.value,
+                photo: url,
+                gitHubClient: e.target.gitHubClient.value,
+                gitHubServer: e.target.gitHubServer.value,
+                youtube: e.target.youtube.value,
+                technologies: e.target.technologies.value,
+                details: e.target.details.value,
+            }
+            console.log(newPost)
+
             const res = await axios.post(" https://boktiar.herokuapp.com/post/newPost", newPost, config);
             console.log(res)
             res && Swal.fire({
@@ -50,6 +60,7 @@ const StudentAdd = () => {
                 text: 'To see go post list',
             })
             navigate("/allposts")
+
         } catch (err) {
             console.log(err, 'form submit failed');
             err && Swal.fire({
@@ -126,9 +137,9 @@ const StudentAdd = () => {
                                     <label htmlFor="inputState" className="form-label">Details</label>
                                     <textarea type="text" className="form-control" id="inputCity" name="details" placeholder="details" />
                                 </div>
-                               
+
                                 <div className="col-12 mb-4">
-                                    <button type="submit"  className="btn btn-danger text-white fw-bold">Add Post</button>
+                                    <button type="submit" className="btn btn-danger text-white fw-bold">Add Post</button>
                                 </div>
                             </form>
                         </>
