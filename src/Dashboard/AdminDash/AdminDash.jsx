@@ -12,7 +12,7 @@ const AdminDash = () => {
     // const PP = 'http:localhost:5000/images';
 
     useEffect(() => {
-        const url = ` https://boktiar.herokuapp.com/auth/admin`
+        const url = ` https://boktiar-server.up.railway.app/auth/admin`
         fetch(url)
             .then(data => data.json())
             .then(data => setCourse(data))
@@ -38,14 +38,14 @@ const AdminDash = () => {
             adminobj.photo = filename;
 
             try {
-                await axios.post(" https://boktiar.herokuapp.com/auth/upload", data);
+                await axios.post(" https://boktiar-server.up.railway.app/auth/upload", data);
             } catch (err) {
                 console.log(err, 'file img submit failed');
             }
         }
 
         try {
-            const res = await axios.post(" https://boktiar.herokuapp.com/auth/register", adminobj, config)
+            const res = await axios.post(" https://boktiar-server.up.railway.app/auth/register", adminobj, config)
             res.data && Swal.fire({
                 icon: 'success',
                 title: 'Admin Added Successfully',
@@ -64,7 +64,7 @@ const AdminDash = () => {
     ///////////////////////////// DELETE  ADMIN /////////////////////////////////////////////////////
     const handleDeleteAdmin = async (id) => {
         try {
-            const res = await axios.delete(` https://boktiar.herokuapp.com/auth/delete/${id}`, config)
+            const res = await axios.delete(` https://boktiar-server.up.railway.app/auth/delete/${id}`, config)
             res && Swal.fire({
                 icon: 'success',
                 text: 'User deleted successfully'

@@ -16,7 +16,7 @@ const SingleUserview = () => {
     console.log(id)
     useEffect(() => {
         const getPost = async () => {
-            const res = await axios.get(` https://boktiar.herokuapp.com/auth/user/${id}`)
+            const res = await axios.get(` https://boktiar-server.up.railway.app/auth/user/${id}`)
             setsinglePost(res.data)
             // setPost(res)
 
@@ -44,7 +44,7 @@ const SingleUserview = () => {
         }
         console.log(postObj)
         try {
-            const res = await axios.put(` https://boktiar.herokuapp.com/auth/update/${singlePost._id}`, postObj)
+            const res = await axios.put(` https://boktiar-server.up.railway.app/auth/update/${singlePost._id}`, postObj)
             res && Swal.fire({
                 icon: 'success',
                 title: 'User updated Successfully',

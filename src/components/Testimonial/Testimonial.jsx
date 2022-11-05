@@ -11,13 +11,13 @@ const Testimonial = () => {
     const AutoplaySlider = withAutoplay(AwesomeSlider);
 
     // fetching data from database
-    const pic = " https://boktiar.herokuapp.com/images/";
+    const pic = " https://boktiar-server.up.railway.app/images/";
 
     const [rev, setRev] = useState([])
     // console.log(rev)
     useEffect(() => {
         const getReview = async () => {
-            const review = await axios.get(' https://boktiar.herokuapp.com/review/getallreview')
+            const review = await axios.get(' https://boktiar-server.up.railway.app/review/getallreview')
             setRev(review.data)
         }
         getReview()

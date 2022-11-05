@@ -7,10 +7,10 @@ import Swal from 'sweetalert2';
 const ReviewManage = () => {
     const [course, setCourse] = useState([])
     // console.log(course)
-    const PP = ' https://boktiar.herokuapp.com/images/';
+    const PP = ' https://boktiar-server.up.railway.app/images/';
 
     useEffect(() => {
-        const url = ` https://boktiar.herokuapp.com/review/getallreview`
+        const url = ` https://boktiar-server.up.railway.app/review/getallreview`
         fetch(url)
             .then(data => data.json())
             .then(data => setCourse(data))
@@ -23,7 +23,7 @@ const ReviewManage = () => {
     console.log(config)
     const handleDeleteAdmin = async (id) => {
         try {
-            const res = await axios.delete(` https://boktiar.herokuapp.com/review/delete/${id}`, config)
+            const res = await axios.delete(` https://boktiar-server.up.railway.app/review/delete/${id}`, config)
             res && Swal.fire({
                 icon: 'success',
                 text: 'review deleted successfully'
