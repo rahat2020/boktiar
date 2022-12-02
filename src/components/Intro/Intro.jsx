@@ -26,6 +26,12 @@ export default function Intro() {
               <div className="i-title-item">
                 Web Designer
               </div>
+              <div className="i-title-item">
+                Administrative Assistant
+              </div>
+              <div className="i-title-item">
+                Data Encoder
+              </div>
             </div>
           </div>
           <p className="i-desc">

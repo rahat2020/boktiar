@@ -51,6 +51,14 @@ export default function Skill() {
                                     <span></span>
                                 </div>
                             </div>
+                            <div className="bar">
+                                <div className="info">
+                                    <span className="skill__title">MS Word</span>
+                                </div>
+                                <div className="progress-line css">
+                                    <span></span>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -91,6 +99,22 @@ export default function Skill() {
                             <div className="bar">
                                 <div className="info">
                                     <span className="skill__title">Express JS</span>
+                                </div>
+                                <div className="progress-line express">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div className="bar">
+                                <div className="info">
+                                    <span className="skill__title">MS Excel</span>
+                                </div>
+                                <div className="progress-line express">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div className="bar">
+                                <div className="info">
+                                    <span className="skill__title">MS Powerpoint</span>
                                 </div>
                                 <div className="progress-line express">
                                     <span></span>
