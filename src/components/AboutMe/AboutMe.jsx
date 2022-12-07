@@ -123,9 +123,9 @@ const AboutMe = () => {
                                     </div>
                                     <div className="card-bottom">
                                         <div className="card-media">
-                                            <Link to="/https://twitter.com/KaziRahat2020" className="card-media-link"><i className="fa-brands fa-twitter me-icon"></i></Link>
-                                            <Link to="/https://www.linkedin.com/in/kazi-rahat2020/" className="card-media-link"><i className="fa-brands fa-linkedin me-icon"></i></Link>
-                                            <Link to="/https://www.instagram.com/kazirahat1020/" className="card-media-link"><i className="fa-brands fa-instagram me-icon"></i></Link>
+                                            <a target="_blank" href="https://twitter.com/KaziRahat2020" rel="noreferrer" className="card-media-link"><i className="fa-brands fa-twitter me-icon"></i></a>
+                                            <a target="_blank" href="https://www.linkedin.com/in/kazi-rahat2020/" rel="noreferrer" className="card-media-link"><i className="fa-brands fa-linkedin me-icon"></i></a>
+                                            <a target="_blank" href="https://www.instagram.com/kazirahat1020/" rel="noreferrer" className="card-media-link"><i className="fa-brands fa-instagram me-icon"></i></a>
                                         </div>
                                     </div>
                                 </div>

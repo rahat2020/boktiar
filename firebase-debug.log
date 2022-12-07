@@ -1,0 +1,114 @@
+[debug] [2022-12-02T05:17:50.912Z] ----------------------------------------------------------------------
+[debug] [2022-12-02T05:17:50.915Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-02T05:17:50.916Z] CLI Version:   11.15.0
+[debug] [2022-12-02T05:17:50.916Z] Platform:      win32
+[debug] [2022-12-02T05:17:50.916Z] Node Version:  v17.9.0
+[debug] [2022-12-02T05:17:50.922Z] Time:          Fri Dec 02 2022 11:17:50 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-02T05:17:50.922Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-02T05:17:50.929Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-12-02T05:17:51.394Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-02T05:17:51.397Z] > authorizing via signed-in user (bloodyhell4040@gmail.com)
+[debug] [2022-12-02T05:17:51.398Z] [iam] checking project rahat-8dac0 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-02T05:17:51.401Z] > refreshing access token with scopes: []
+[debug] [2022-12-02T05:17:51.403Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-02T05:17:51.404Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-02T05:17:51.712Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-12-02T05:17:51.712Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-02T05:17:51.724Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rahat-8dac0:testIamPermissions [none]
+[debug] [2022-12-02T05:17:51.724Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rahat-8dac0:testIamPermissions x-goog-quota-user=projects/rahat-8dac0
+[debug] [2022-12-02T05:17:51.725Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rahat-8dac0:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-02T05:17:52.103Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-12-02T05:17:52.104Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-12-02T05:17:53.025Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rahat-8dac0:testIamPermissions 200
+[debug] [2022-12-02T05:17:53.025Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rahat-8dac0:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-02T05:17:53.026Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rahat-8dac0 [none]
+[debug] [2022-12-02T05:17:53.569Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rahat-8dac0 200
+[debug] [2022-12-02T05:17:53.569Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rahat-8dac0 {"projectId":"rahat-8dac0","projectNumber":"999634159279","displayName":"rahat","name":"projects/rahat-8dac0","resources":{"hostingSite":"rahat-8dac0"},"state":"ACTIVE","etag":"1_676acc21-9d22-4f8c-8b23-d1b495b7b47b"}
+[info] 
+[info] === Deploying to 'rahat-8dac0'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-12-02T05:17:53.577Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/rahat-8dac0/versions [none]
+[debug] [2022-12-02T05:17:53.577Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/rahat-8dac0/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-12-02T05:17:54.628Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/rahat-8dac0/versions 200
+[debug] [2022-12-02T05:17:54.628Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/rahat-8dac0/versions {"name":"projects/999634159279/sites/rahat-8dac0/versions/468346b3f984e690","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[rahat-8dac0]: beginning deploy... 
+[info] i  hosting[rahat-8dac0]: found 18 files in build 
+[debug] [2022-12-02T05:17:54.650Z] [hosting] uploading with 200 concurrency
+[debug] [2022-12-02T05:17:55.458Z] [hosting] hash cache [YnVpbGQ] stored for 18 files
+[debug] [2022-12-02T05:17:55.459Z] [hosting][hash queue][FINAL] {"max":796,"min":8,"avg":92.5,"active":0,"complete":18,"success":18,"errored":0,"retried":0,"total":18,"elapsed":806}
+[debug] [2022-12-02T05:17:55.460Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/999634159279/sites/rahat-8dac0/versions/468346b3f984e690:populateFiles [none]
+[debug] [2022-12-02T05:17:55.460Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/999634159279/sites/rahat-8dac0/versions/468346b3f984e690:populateFiles {"files":{"/favicon.ico":"26a78070677c3fc709c9bf46fe2b67bb0b69860f6555098a139e16804114a64d","/asset-manifest.json":"ef66584eb626cde03570843c7ffe0e8b488519ab5808431e28666faa837fa534","/index.html":"ea22bc6735f422794058c2f6fc0c8a7c17e6fa7af245b60b6382479a1ec5fb48","/static/js/main.721bac80.js.LICENSE.txt":"3d78c89dc9c829cfefda1cff81875372805369af02e891b0c08c8b072b1304b4","/static/media/moon.3bea3d398a25611d421b.png":"39e14492d1625cb87e8b002d0a55c11c9952c0cef4acd05adb3b35218629dc04","/static/media/phone.d90a6d23cf5129d853bb.png":"4244817fc4a490c288373c84c86864f706a1c9b9214d8d7446bd5cfb69b72813","/static/media/email.a49e015815e3ac6d2bd3.png":"c1b9af55263e5bf79a76d207212744b830a27fb6cadcf03d7bb0835f0501d46e","/static/media/login.46f5ac031001bf52f613.png":"cd49a0c2aceac6fa0f2e8d2f8c8a340d85e2772c7a35a86471d2a6f8c88d80bc","/static/media/address.a01cb8cc428702f30bec.png":"502f57ce85799c44978a8f64e8329d068256a26fff440f2879cf2717eb7a8f24","/static/media/sun.f794832ad72b90c61eb7.png":"d4e91142dd7c4c84a66eac681792b8fa3c1b7d0d2b8dc42ac81d98cc34e1a83d","/static/media/sign.fb6dc954573e7268c860.png":"7c3cf8634065d7071ed33c01c9c349bb9949afd1b807bb2dc3fd32d333c6cea6","/static/css/main.dfeb45d8.css":"fdfc573dd29618ebad141b661e14214e65e3269fb7d5e29617ef08a3c4c89622","/static/css/main.dfeb45d8.css.map":"4b6dc65dada2b1020559036a3ab87b4368a83724ab79e5174b22b12b20892075","/static/media/rahatOne.e1a06355114850f493ab.png":"1f0c24b2a509e37015930eba4be30b27da8a43c392456a72f3534b0bf7d10159","/static/media/proMe.bce2b34f2922af4a3482.png":"9e649a45c523704209c35c76974ec0fc095782055e920e3a40917e016d6affec","/static/js/main.721bac80.js":"cdd86ad701c7abecd30f8e41a63a65edbcbc969dc116bdaf78e5889f52dca1fb","/static/media/mebg.8eba742a6e2debfd2337.jpg":"a85d53e76b43a34e572d1b357c03937406fbce925f1bf502c039046ac756bda2","/static/js/main.721bac80.js.map":"115d358577be5baf1838b03709b916cf8494214d960c894401142c24e266e88c"}}
+[debug] [2022-12-02T05:17:56.337Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/999634159279/sites/rahat-8dac0/versions/468346b3f984e690:populateFiles 200
+[debug] [2022-12-02T05:17:56.337Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/999634159279/sites/rahat-8dac0/versions/468346b3f984e690:populateFiles {"uploadRequiredHashes":["4b6dc65dada2b1020559036a3ab87b4368a83724ab79e5174b22b12b20892075","ea22bc6735f422794058c2f6fc0c8a7c17e6fa7af245b60b6382479a1ec5fb48","cdd86ad701c7abecd30f8e41a63a65edbcbc969dc116bdaf78e5889f52dca1fb","115d358577be5baf1838b03709b916cf8494214d960c894401142c24e266e88c","ef66584eb626cde03570843c7ffe0e8b488519ab5808431e28666faa837fa534"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files"}
+[debug] [2022-12-02T05:17:56.343Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/4b6dc65dada2b1020559036a3ab87b4368a83724ab79e5174b22b12b20892075 [none]
+[debug] [2022-12-02T05:17:56.343Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/4b6dc65dada2b1020559036a3ab87b4368a83724ab79e5174b22b12b20892075 [stream]
+[debug] [2022-12-02T05:17:56.367Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/ea22bc6735f422794058c2f6fc0c8a7c17e6fa7af245b60b6382479a1ec5fb48 [none]
+[debug] [2022-12-02T05:17:56.367Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/ea22bc6735f422794058c2f6fc0c8a7c17e6fa7af245b60b6382479a1ec5fb48 [stream]
+[debug] [2022-12-02T05:17:56.380Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/cdd86ad701c7abecd30f8e41a63a65edbcbc969dc116bdaf78e5889f52dca1fb [none]
+[debug] [2022-12-02T05:17:56.381Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/cdd86ad701c7abecd30f8e41a63a65edbcbc969dc116bdaf78e5889f52dca1fb [stream]
+[debug] [2022-12-02T05:17:56.393Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/115d358577be5baf1838b03709b916cf8494214d960c894401142c24e266e88c [none]
+[debug] [2022-12-02T05:17:56.393Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/115d358577be5baf1838b03709b916cf8494214d960c894401142c24e266e88c [stream]
+[debug] [2022-12-02T05:17:56.399Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/ef66584eb626cde03570843c7ffe0e8b488519ab5808431e28666faa837fa534 [none]
+[debug] [2022-12-02T05:17:56.400Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/ef66584eb626cde03570843c7ffe0e8b488519ab5808431e28666faa837fa534 [stream]
+[debug] [2022-12-02T05:17:56.406Z] [hosting][populate queue][FINAL] {"max":887,"min":887,"avg":887,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":950}
+[debug] [2022-12-02T05:17:56.406Z] [hosting] uploads queued: 5
+[debug] [2022-12-02T05:17:57.975Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/ea22bc6735f422794058c2f6fc0c8a7c17e6fa7af245b60b6382479a1ec5fb48 200
+[debug] [2022-12-02T05:17:57.976Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/ea22bc6735f422794058c2f6fc0c8a7c17e6fa7af245b60b6382479a1ec5fb48 [stream]
+[debug] [2022-12-02T05:17:58.090Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/ef66584eb626cde03570843c7ffe0e8b488519ab5808431e28666faa837fa534 200
+[debug] [2022-12-02T05:17:58.090Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/ef66584eb626cde03570843c7ffe0e8b488519ab5808431e28666faa837fa534 [stream]
+[debug] [2022-12-02T05:17:58.385Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/4b6dc65dada2b1020559036a3ab87b4368a83724ab79e5174b22b12b20892075 200
+[debug] [2022-12-02T05:17:58.385Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/4b6dc65dada2b1020559036a3ab87b4368a83724ab79e5174b22b12b20892075 [stream]
+[debug] [2022-12-02T05:17:59.002Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/cdd86ad701c7abecd30f8e41a63a65edbcbc969dc116bdaf78e5889f52dca1fb 200
+[debug] [2022-12-02T05:17:59.002Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/cdd86ad701c7abecd30f8e41a63a65edbcbc969dc116bdaf78e5889f52dca1fb [stream]
+[debug] [2022-12-02T05:17:59.990Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/115d358577be5baf1838b03709b916cf8494214d960c894401142c24e266e88c 200
+[debug] [2022-12-02T05:17:59.990Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/rahat-8dac0/versions/468346b3f984e690/files/115d358577be5baf1838b03709b916cf8494214d960c894401142c24e266e88c [stream]
+[debug] [2022-12-02T05:17:59.991Z] [hosting][upload queue][FINAL] {"max":3650,"min":1637,"avg":2348.8,"active":0,"complete":5,"success":5,"errored":0,"retried":0,"total":5,"elapsed":3653}
+[info] +  hosting[rahat-8dac0]: file upload complete 
+[debug] [2022-12-02T05:17:59.995Z] [hosting] deploy completed after 5364ms
+[debug] [2022-12-02T05:18:00.012Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "rahat-8dac0"
+    },
+    "version": "projects/999634159279/sites/rahat-8dac0/versions/468346b3f984e690"
+  }
+]
+[info] i  hosting[rahat-8dac0]: finalizing version... 
+[debug] [2022-12-02T05:18:00.017Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/rahat-8dac0/versions/468346b3f984e690 updateMask=status%2Cconfig
+[debug] [2022-12-02T05:18:00.017Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/rahat-8dac0/versions/468346b3f984e690 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2022-12-02T05:18:00.868Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/rahat-8dac0/versions/468346b3f984e690 200
+[debug] [2022-12-02T05:18:00.868Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/rahat-8dac0/versions/468346b3f984e690 {"name":"projects/999634159279/sites/rahat-8dac0/versions/468346b3f984e690","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-02T05:18:01.303892Z","createUser":{"email":"bloodyhell4040@gmail.com"},"finalizeTime":"2022-12-02T05:18:07.815861Z","finalizeUser":{"email":"bloodyhell4040@gmail.com"}}
+[debug] [2022-12-02T05:18:00.869Z] [hosting] finalized version for rahat-8dac0:[object Object]
+[info] +  hosting[rahat-8dac0]: version finalized 
+[info] i  hosting[rahat-8dac0]: releasing new version... 
+[debug] [2022-12-02T05:18:00.871Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/rahat-8dac0/channels/live/releases versionName=projects%2F999634159279%2Fsites%2Frahat-8dac0%2Fversions%2F468346b3f984e690
+[debug] [2022-12-02T05:18:00.871Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/rahat-8dac0/channels/live/releases {}
+[debug] [2022-12-02T05:18:02.717Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/rahat-8dac0/channels/live/releases 200
+[debug] [2022-12-02T05:18:02.718Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/rahat-8dac0/channels/live/releases {"name":"projects/999634159279/sites/rahat-8dac0/channels/live/releases/1669958288691119","version":{"name":"projects/999634159279/sites/rahat-8dac0/versions/468346b3f984e690","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-02T05:18:01.303892Z","createUser":{"email":"bloodyhell4040@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu27UdjE_JmTSXHoG0lF4n4OyedKgKRs-_PhahYL9Jo"},"finalizeTime":"2022-12-02T05:18:07.815861Z","finalizeUser":{"email":"bloodyhell4040@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu27UdjE_JmTSXHoG0lF4n4OyedKgKRs-_PhahYL9Jo"}},"type":"DEPLOY","releaseTime":"2022-12-02T05:18:08.691119602Z","releaseUser":{"email":"bloodyhell4040@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu27UdjE_JmTSXHoG0lF4n4OyedKgKRs-_PhahYL9Jo"}}
+[debug] [2022-12-02T05:18:02.718Z] [hosting] release: {"name":"projects/999634159279/sites/rahat-8dac0/channels/live/releases/1669958288691119","version":{"name":"projects/999634159279/sites/rahat-8dac0/versions/468346b3f984e690","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-02T05:18:01.303892Z","createUser":{"email":"bloodyhell4040@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu27UdjE_JmTSXHoG0lF4n4OyedKgKRs-_PhahYL9Jo"},"finalizeTime":"2022-12-02T05:18:07.815861Z","finalizeUser":{"email":"bloodyhell4040@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu27UdjE_JmTSXHoG0lF4n4OyedKgKRs-_PhahYL9Jo"}},"type":"DEPLOY","releaseTime":"2022-12-02T05:18:08.691119602Z","releaseUser":{"email":"bloodyhell4040@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu27UdjE_JmTSXHoG0lF4n4OyedKgKRs-_PhahYL9Jo"}}
+[info] +  hosting[rahat-8dac0]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/rahat-8dac0/overview
+[info] Hosting URL: https://rahat-8dac0.web.app
+[debug] [2022-12-02T05:18:08.141Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[error] 
+[error] Error: An unexpected error has occurred.
