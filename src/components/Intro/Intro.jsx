@@ -30,6 +30,9 @@ export default function Intro() {
                 Administrative Assistant
               </div>
               <div className="i-title-item">
+                Computer Operator
+              </div>
+              <div className="i-title-item">
                 Data Encoder
               </div>
             </div>

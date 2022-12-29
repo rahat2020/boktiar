@@ -3,6 +3,8 @@ import About from '../About/About'
 import Blogs from '../Blogs/Blogs'
 import Contact from '../Contact/Contact'
 import ContactBottom from '../ContactBottom/ContactBottom'
+import ExcelProject from '../Excel/ExcelProject/ExcelProject'
+// import ExcelProject from '../ExcelProject/ExcelProject'
 import Intro from '../Intro/Intro'
 import Navbar from '../Navbar/Navbar'
 import ProductList from '../ProductList/ProductList'
@@ -20,6 +22,7 @@ export default function Home() {
             <Navbar />
             <About />
             <Skill />
+            <ExcelProject/>
             <ProductList />
             <Videos/>
             <Blogs />

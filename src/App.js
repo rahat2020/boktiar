@@ -25,6 +25,7 @@ import Contact from "./components/Contact/ContactMe";
 import Gototop from "./components/Gototop/Gototop";
 import { AuthContext } from "./Context/AuthContext";
 import SingleUserview from "./Dashboard/SingleUserview/SingleUserview";
+import ExcelProjectsAll from "./components/Excel/ExcelProjectsAll/ExcelProjectsAll";
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/allProjects" element={<Projects />} />
+        <Route path="/viewExcelALl" element={<ExcelProjectsAll/>} />
         <Route path="/all-blogs" element={<AllBlogs />} />
         <Route path="/aboutme" element={<AboutMe />} />
         <Route path="/contactme" element={<Contact />} />
