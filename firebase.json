@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site":"boktiarr",
+    "site": "boktiarr",
     "public": "build",
     "ignore": [
       "firebase.json",
