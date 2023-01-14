@@ -3,6 +3,7 @@ import About from '../About/About'
 import Blogs from '../Blogs/Blogs'
 import Contact from '../Contact/Contact'
 import ContactBottom from '../ContactBottom/ContactBottom'
+import CountAPI from '../CountAPI/CountAPI'
 import ExcelProject from '../Excel/ExcelProject/ExcelProject'
 // import ExcelProject from '../ExcelProject/ExcelProject'
 import Intro from '../Intro/Intro'
@@ -21,6 +22,7 @@ export default function Home() {
             <Intro />
             <Navbar />
             <About />
+            {/* <CountAPI/> */}
             <Skill />
             <ExcelProject/>
             <ProductList />

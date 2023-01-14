@@ -4,6 +4,7 @@ import './About.css';
 import proMe from '../../img/proMe.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import CountAPI from '../CountAPI/CountAPI';
 
 export default function About() {
     useEffect(() => {
@@ -34,6 +35,7 @@ export default function About() {
                     <h4 className="fw-bold">Job Status:</h4>
                     <h5 className="fw-bold">I'm currently open for work and can join immediately.</h5>
                     <div className="a-award">
+                    <CountAPI/> 
                     </div>
                 </div>
             </div>
