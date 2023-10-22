@@ -25,7 +25,7 @@ const Login = () => {
     console.log(adminobj)
 
     try {
-      const res = await axios.post(" https://boktiar-server.up.railway.app/auth/register", adminobj);
+      const res = await axios.post(" https://boktiar-server.vercel.app/auth/register", adminobj);
       console.log(res)
       res.data && Swal.fire({
         icon: 'success',

@@ -10,10 +10,10 @@ const StudentList = () => {
   const [fetchData, setFetchData] = useState([])
   // console.log('post data', fetchData)
 
-  const pic = " https://boktiar-server.up.railway.app/images/";
+  const pic = " https://boktiar-server.vercel.app/images/";
 
   useEffect(() => {
-    const url = ` https://boktiar-server.up.railway.app/post/getPost`
+    const url = ` https://boktiar-server.vercel.app/post/getPost`
     fetch(url)
       .then(res => res.json())
       .then(data => setFetchData(data))
@@ -25,7 +25,7 @@ const StudentList = () => {
   }
   const handleDeletePost = async (id) => {
     try {
-      const res = await axios.delete(` https://boktiar-server.up.railway.app/post/delete/${id}`, config)
+      const res = await axios.delete(` https://boktiar-server.vercel.app/post/delete/${id}`, config)
       console.log(res)
       res && Swal.fire({
         icon: 'success',

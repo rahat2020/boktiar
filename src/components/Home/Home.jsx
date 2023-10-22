@@ -13,6 +13,7 @@ import Skill from '../Skill/Skill'
 import Testimonial from '../Testimonial/Testimonial'
 import Toggle from '../Toggle/Toggle';
 import Videos from '../Videos/Videos';
+import Location from '../Locations'
 
 export default function Home() {
 
@@ -22,6 +23,7 @@ export default function Home() {
             <Intro />
             <Navbar />
             <About />
+            {/* <Location/> */}
             {/* <CountAPI/> */}
             <Skill />
             <ExcelProject/>

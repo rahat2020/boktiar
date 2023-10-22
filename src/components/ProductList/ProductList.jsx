@@ -8,7 +8,7 @@ export default function ProductList() {
     const [pd, setPd] = useState([])
     // console.log(pd)
     useEffect(() => {
-        const url = ` https://boktiar-server.up.railway.app/post/getPost`;
+        const url = ` https://boktiar-server.vercel.app/post/getPost`;
         fetch(url)
             .then(response => response.json())
             .then(data => setPd(data));

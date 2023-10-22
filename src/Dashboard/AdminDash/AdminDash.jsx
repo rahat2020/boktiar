@@ -7,12 +7,10 @@ import { Link } from 'react-router-dom';
 
 const AdminDash = () => {
     const [course, setCourse] = useState([])
-    const [file, setFile] = useState([])
-
-    // const PP = 'http:localhost:5000/images';
+    console.log('course', course)
 
     useEffect(() => {
-        const url = ` https://boktiar-server.up.railway.app/auth/admin`
+        const url = ` https://boktiar-server.vercel.app/auth/admin`
         fetch(url)
             .then(data => data.json())
             .then(data => setCourse(data))
@@ -22,39 +20,38 @@ const AdminDash = () => {
     const config = {
         headers: { token: `Bearer ${JSON.parse(localStorage.getItem('token'))}` }
     }
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const adminobj = {
-            username: e.target.username.value,
-            email: e.target.email.value,
-            password: e.target.password.value,
-            secretCode: e.target.secretCode.value,
-        }
-        if (file) {
-            const data = new FormData();
-            const filename = Date.now() + file.name;
-            data.append("name", filename);
-            data.append("file", file);
-            adminobj.photo = filename;
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     const adminobj = {
+    //         username: e.target.username.value,
+    //         email: e.target.email.value,
+    //         password: e.target.password.value,
+    //         secretCode: e.target.secretCode.value,
+    //     }
+    //     if (file) {
+    //         const data = new FormData();
+    //         const filename = Date.now() + file.name;
+    //         data.append("name", filename);
+    //         data.append("file", file);
+    //         adminobj.photo = filename;
 
-            try {
-                await axios.post(" https://boktiar-server.up.railway.app/auth/upload", data);
-            } catch (err) {
-                console.log(err, 'file img submit failed');
-            }
-        }
+    //         try {
+    //             await axios.post(" https://boktiar-server.vercel.app/auth/upload", data);
+    //         } catch (err) {
+    //             console.log(err, 'file img submit failed');
+    //         }
+    //     }
 
-        try {
-            const res = await axios.post(" https://boktiar-server.up.railway.app/auth/register", adminobj, config)
-            res.data && Swal.fire({
-                icon: 'success',
-                title: 'Admin Added Successfully',
-                // text: 'To see go student view',
-            })
-        } catch (err) {
-            console.log(err, 'admin upload failed')
-        }
-    }
+    //     try {
+    //         const res = await axios.post(" https://boktiar-server.vercel.app/auth/register", adminobj, config)
+    //         res.data && Swal.fire({
+    //             icon: 'success',
+    //             title: 'Admin Added Successfully',
+    //         })
+    //     } catch (err) {
+    //         console.log(err, 'admin upload failed')
+    //     }
+    // }
 
     const imgportantmsg = () => {
         alert('remmeber this secret code for forgot password')
@@ -64,13 +61,50 @@ const AdminDash = () => {
     ///////////////////////////// DELETE  ADMIN /////////////////////////////////////////////////////
     const handleDeleteAdmin = async (id) => {
         try {
-            const res = await axios.delete(` https://boktiar-server.up.railway.app/auth/delete/${id}`, config)
+            const res = await axios.delete(` https://boktiar-server.vercel.app/auth/delete/${id}`, config)
             res && Swal.fire({
                 icon: 'success',
                 text: 'User deleted successfully'
             })
         } catch (err) {
             console.log(err)
+        }
+    }
+
+    // ADD NEW USER
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [pass, setPassword] = useState('')
+    const [isAdmin, setIsAdmin] = useState('')
+    const [secretCode, setSecretCode] = useState('')
+    const [photo, setPhotos] = useState('')
+    const handleAddUser = async (e) => {
+        e.preventDefault()
+        try {
+            const data = new FormData()
+            data.append('file', photo)
+            data.append('upload_preset', 'upload')
+            const uploadRes = await axios.post("https://api.cloudinary.com/v1_1/rahatdev1020/image/upload", data)
+            const { url } = uploadRes.data
+            const object = {
+                name,
+                email,
+                pass,
+                isAdmin,
+                secretCode,
+                photo: url
+            }
+            const res = await axios.post('https://boktiar-server.vercel.app/auth/register', object, config)
+            res && Swal.fire({
+                icon: 'success',
+                text: 'User created'
+            })
+        } catch (err) {
+            console.log(err)
+            err && Swal.fire({
+                icon: 'error',
+                text: 'User creation failed'
+            })
         }
     }
     return (
@@ -138,25 +172,40 @@ const AdminDash = () => {
                                     <table className="table border">
                                         <thead>
                                             <tr className="text-center">
+                                                <th className={classes.thead} scope="col">S/N</th>
                                                 <th className={classes.thead} scope="col">ID</th>
                                                 <th className={classes.thead} scope="col">NAME</th>
                                                 <th className={classes.thead} scope="col">EMAIL</th>
+                                                <th className={classes.thead} scope="col">IMAGE</th>
+                                                <th className={classes.thead} scope="col">ROLE</th>
                                                 <th className={classes.thead} scope="col">SECREET CODE</th>
                                                 <th className={classes.thead} scope="col">PASS</th>
                                                 <th className={classes.thead} scope="col">ACTIONS</th>
                                             </tr>
                                         </thead>
                                         {
-                                            course.map(item => (
+                                            course.map((item, index) => (
                                                 <tbody className={classes.tbody} key={item._id}>
                                                     <tr className={classes.trow}>
+                                                        <td data-title="ID" className={classes.tdata}>{index + 1}</td>
                                                         <td data-title="ID" className={classes.tdata}>{item._id}</td>
                                                         <td data-title="NAME" className={classes.tdata}>
                                                             {/* <img src={PP + item?.photo} alt="admin" className={classes.teacherImg} /> */}
                                                             {item.name}
                                                         </td>
-                                                        <td data-title="EMAIL" className={classes.tdata}>{item.email}</td>
+                                                        <td data-title="EMAIL" className={classes.tdata}>{item?.email}</td>
+                                                        <td data-title="EMAIL" className={classes.tdata}>
+                                                            <img src={item?.photo} alt={item?.name}
+                                                                style={{
+                                                                    width: '3rem',
+                                                                    height: '3rem',
+                                                                    objectFit: 'contain',
+                                                                    borderRadius: '50%'
+                                                                }}
+                                                            />
+                                                        </td>
                                                         <td data-title="SECRET CODE" className={classes.tdata}>{item.secretCode}</td>
+                                                        <td data-title="SECRET CODE" className={classes.tdata}>{item?.isAdmin === true ? 'admin' : 'user'}</td>
                                                         <td data-title="PASS" className={classes.tdata}>ignanna</td>
                                                         <td data-title="ACTIONS" className={classes.tdata}>
                                                             <div className={classes.action}>
@@ -184,34 +233,48 @@ const AdminDash = () => {
                                     {/* basic details */}
                                     <>
                                         <div className={classes.bdtails}>
-                                            <h3>User Details</h3>
+                                            <h3 className="text-center">Add User</h3>
                                             <div className={classes.line} />
                                         </div>
-                                        <form className="row g-3" onSubmit={handleSubmit}>
-                                            <div className="col-md-6">
+                                        <form className="row g-3">
+                                            <div className="col-md-4">
                                                 <label htmlFor="inputEmail4" className="form-label">Name</label>
-                                                <input type="text" className="form-control" id="inputEmail4" name="username" placeholder="name" />
+                                                <input type="text" className="form-control" id="inputEmail4" placeholder="name"
+                                                    onChange={(e) => setName(e.target.value)} />
                                             </div>
-                                            <div className="col-md-6">
+                                            <div className="col-md-4">
                                                 <label htmlFor="inputPassword4" className="form-label">Email</label>
-                                                <input type="text" className="form-control" id="inputPassword4" name="email" placeholder="email" />
+                                                <input type="text" className="form-control" id="inputPassword4" placeholder="email"
+                                                    onChange={(e) => setEmail(e.target.value)} />
                                             </div>
-                                            <div className="col-md-6">
+                                            <div className="col-md-4">
                                                 <label htmlFor="inputPassword4" className="form-label">Password</label>
-                                                <input type="text" className="form-control" id="inputPassword4" name="password" placeholder="password" />
+                                                <input type="text" className="form-control" id="inputPassword4" placeholder="password"
+                                                    onChange={(e) => setPassword(e.target.value)}
+                                                />
                                             </div>
-                                            <div className="col-md-6">
+                                            <div className="col-md-4">
+                                                <label for="inputState" className="form-label">Role</label>
+                                                <select id="inputState" className="form-select form-control"
+                                                    onChange={(e) => setIsAdmin(e.target.value)}>
+                                                    <option selected>Choose user role</option>
+                                                    <option value="true">Admin</option>
+                                                    <option value="false">User</option>
+                                                </select>
+                                            </div>
+                                            <div className="col-md-4">
                                                 <label htmlFor="inputCity" className="form-label">Secret Code</label>
-                                                <input type="text" className="form-control" id="inputCity" name="secretCode" placeholder="secret code" onClick={imgportantmsg} />
+                                                <input type="text" className="form-control" id="inputCity" placeholder="secret code"
+                                                    onClick={imgportantmsg} onChange={(e) => setSecretCode(e.target.value)} />
                                             </div>
-                                            <div className="col-md-12">
+                                            <div className="col-md-4">
                                                 <label htmlFor="inputZip" className="form-label">Admin Image</label>
                                                 <div className="d-flex justify-content-center align-items-center">
-                                                    <input type="file" onChange={(e) => setFile(e.target.files[0])} className="form-control" />
+                                                    <input type="file" onChange={(e) => setPhotos(e.target.files[0])} className="form-control" />
                                                 </div>
                                             </div>
                                             <div className="col-12 mb-4">
-                                                <button type="submit" className="btn btn-warning text-white fw-bold">Submit</button>
+                                                <button type="submit" className="btn btn-warning text-white fw-bold" onClick={handleAddUser}>Add</button>
                                             </div>
                                         </form>
                                     </>

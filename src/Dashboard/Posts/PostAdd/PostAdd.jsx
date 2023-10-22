@@ -24,7 +24,7 @@ const StudentAdd = () => {
         //     data.append("file", file);
         //     newPost.photo = filename;
         //     try {
-        //         await axios.post(" https://boktiar-server.up.railway.app/post/upload", data);
+        //         await axios.post(" https://boktiar-server.vercel.app/post/upload", data);
         //     } catch (err) {
         //         console.log(err, 'file img submit failed');
         //     }
@@ -52,7 +52,7 @@ const StudentAdd = () => {
             }
             console.log(newPost)
 
-            const res = await axios.post(" https://boktiar-server.up.railway.app/post/newPost", newPost, config);
+            const res = await axios.post(" https://boktiar-server.vercel.app/post/newPost", newPost, config);
             console.log(res)
             res && Swal.fire({
                 icon: 'success',
@@ -65,8 +65,8 @@ const StudentAdd = () => {
             console.log(err, 'form submit failed');
             err && Swal.fire({
                 icon: 'error',
-                title: "Post didn't added",
-                text: "Check every feild"
+                title: "Post creation failed",
+                text: `${err?.response?.data?.message}`
             })
         }
     }

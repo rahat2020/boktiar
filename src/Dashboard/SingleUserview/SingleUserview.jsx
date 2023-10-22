@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 // import Sidebar from '../../Sidebar/Sidebar';
 import classes from './SingleUserview.module.css';
 // import user from '../../../img/user.png';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from "axios";
 import Swal from "sweetalert2";
 import Sidebar from "../Sidebar/Sidebar";
@@ -10,13 +10,11 @@ import { AuthContext } from "../../Context/AuthContext";
 
 const SingleUserview = () => {
     const [singlePost, setsinglePost] = useState([])
-    // console.log('single post', singlePost._id)
-    // const [post, setPost] = useState({})
+    // console.log('single post', singlePost)
     const { id } = useParams()
-    console.log(id)
     useEffect(() => {
         const getPost = async () => {
-            const res = await axios.get(` https://boktiar-server.up.railway.app/auth/user/${id}`)
+            const res = await axios.get(` https://boktiar-server.vercel.app/auth/user/${id}`)
             setsinglePost(res.data)
             // setPost(res)
 
@@ -26,37 +24,73 @@ const SingleUserview = () => {
 
 
     // UPDATE POST
+    const { user } = useContext(AuthContext)
+    const config = {
+        headers: { token: `Bearer ${JSON.parse(localStorage.getItem('token'))}` }
+    }
     const [updated, setUpdated] = useState(false)
-    const [name, setUserName] = useState("")
-    const [email, setEmail] = useState("")
-    const [pass, setPassword] = useState("")
-    const [secretCode, setsecretCode] = useState("")
-    const { user,dispatch } = useContext(AuthContext)
+    const [name, setUserName] = useState(singlePost?.name || "")
+    const [email, setEmail] = useState(singlePost?.email || "")
+    const [pass, setPassword] = useState(singlePost?.pass || "")
+    const [secretCode, setsecretCode] = useState(singlePost?.secretCode || "")
+    const [photo, setPhoto] = useState(singlePost?.photo || "")
     // console.log(user._id)
     const navigate = useNavigate();
     const handleUpdate = async (_id) => {
-        const postObj = {
-            userId: user._id,
-            name,
-            email,
-            pass,
-            secretCode,
+        if (!photo) {
+            const postObj = {
+                userId: singlePost?._id,
+                name: name || singlePost?.name || "",
+                email: email || singlePost?.email || "",
+                photo: singlePost?.photo || "",
+                pass: pass || singlePost?.pass || "",
+                secretCode: secretCode || singlePost?.secretCode || "",
+            }
+            console.log(postObj)
+            try {
+                const res = await axios.put(` https://boktiar-server.vercel.app/auth/update/${singlePost._id}`, postObj, config)
+                res && Swal.fire({
+                    icon: 'success',
+                    title: 'User updated Successfully',
+                })
+                // console.log(res)
+
+            } catch (err) {
+                console.log(err)
+                err && Swal.fire({
+                    icon: 'error',
+                    title: `${err?.response?.data}`,
+                })
+            }
+        } else if (photo) {
+            const data = new FormData()
+            data.append('file', photo)
+            data.append('upload_preset', 'upload')
+            const uploadRes = await axios.post("https://api.cloudinary.com/v1_1/rahatdev1020/image/upload", data)
+            const { url } = uploadRes.data
+            const postObj = {
+                userId: singlePost?._id,
+                name: name || singlePost?.name || "",
+                email: email || singlePost?.email || "",
+                photo: url || singlePost?.photo || "",
+                pass: pass || singlePost?.pass || "",
+                secretCode: secretCode || singlePost?.secretCode || "",
+            }
+            try {
+                const res = await axios.put(` https://boktiar-server.vercel.app/auth/update/${singlePost._id}`, postObj, config)
+                res && Swal.fire({
+                    icon: 'success',
+                    title: 'User updated Successfully',
+                })
+
+            } catch (err) {
+                console.log(err)
+            }
         }
-        console.log(postObj)
-        try {
-            const res = await axios.put(` https://boktiar-server.up.railway.app/auth/update/${singlePost._id}`, postObj)
-            res && Swal.fire({
-                icon: 'success',
-                title: 'User updated Successfully',
-            })
-            console.log(res)
-            dispatch({ type: "LOGOUT"})
-            navigate('/login')
-            
-        } catch (err) {
-            console.log(err)
-        }
+
     }
+
+    const pathname = window.location.pathname
 
     return (
         <>
@@ -64,7 +98,10 @@ const SingleUserview = () => {
             <div className={classes.teacherView}>
                 <div className="colLeft">
                     <h2 className={classes.title}>User View`</h2>
-                    <strong className={classes.firstTitle}>Dashboard / <span className={classes.scndTitle}>single user</span></strong>
+                    <strong className={classes.firstTitle}>
+                        <Link to="/dashboard">Dashboard</Link>
+                        <Link to={pathname} >{pathname}</Link>
+                    </strong>
                 </div>
 
                 {/* about student */}
@@ -90,6 +127,7 @@ const SingleUserview = () => {
                                 <span>Email:</span>
                                 <span>Password:</span>
                                 <span>Secret Code</span>
+                                <span>Image</span>
                             </div>
                             <div className={updated ? `${classes.reucegap}` : `${classes.colRight}`}>
                                 {
@@ -123,7 +161,13 @@ const SingleUserview = () => {
                                         :
                                         <span>{singlePost.secretCode}</span>
                                 }
-
+                                {
+                                    updated ?
+                                        <input type="file" onChange={(e) => setPhoto(e.target.files[0])} className="form-control" />
+                                        :
+                                        <img src={singlePost?.photo} alt={singlePost?.name}
+                                            style={{ width: '3rem', height: '3rem', objectFit: 'contain', borderRadius: '30px' }} />
+                                }
                             </div>
                         </div>
                     </div>

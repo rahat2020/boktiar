@@ -20,6 +20,7 @@ const Sidebar = () => {
     const { user, dispatch, decodedTkn } = useContext(AuthContext)
     const handleLogout = () => {
         dispatch({ type: "LOGOUT" })
+        localStorage.removeItem('token')
         navigate('/login')
     }
 
@@ -69,13 +70,13 @@ const Sidebar = () => {
                                     decodedTkn.isAdmin === true ?
                                         <>
                                             {/* ADMIN DASHBOARD */}
-                                            <div className={open ? "sidebar-item open" : "sidebar-item"}>
+                                            <div className={open ? "sidebar-item open" : "sidebar-item"} onClick={() => setOpen(!open)}>
                                                 <span className="sidebar-title navLink">
                                                     <span className="">
                                                         <i className="fa-solid fa-chalkboard-user" id="navLinkIcon"></i>
                                                         Dashboard
                                                     </span>
-                                                    <i className="fa-solid fa-angle-down toggle-btn" onClick={() => setOpen(!open)}></i>
+                                                    <i className="fa-solid fa-angle-down toggle-btn" ></i>
                                                 </span>
                                                 <ul className="sidebar-content">
                                                     <li className="sidebar-submenu"><Link to="/admin" id="post-li">Admin dashboard</Link></li>
@@ -83,13 +84,13 @@ const Sidebar = () => {
                                             </div>
 
                                             {/* POSTS */}
-                                            <div className={topen ? "sidebar-item open" : "sidebar-item"}>
+                                            <div className={topen ? "sidebar-item open" : "sidebar-item"} onClick={() => setTopen(!topen)}>
                                                 <span className="sidebar-title navLink">
                                                     <span className="">
                                                         <i className="fa-solid fa-envelopes-bulk" id="navLinkIcon"></i>
                                                         Posts
                                                     </span>
-                                                    <i className="fa-solid fa-angle-down toggle-btn" onClick={() => setTopen(!topen)}></i>
+                                                    <i className="fa-solid fa-angle-down toggle-btn" ></i>
                                                 </span>
                                                 <ul className="sidebar-content">
                                                     <li className="sidebar-submenu"><Link to="/allposts" id="post-li">All Posts</Link></li>
@@ -99,13 +100,13 @@ const Sidebar = () => {
                                                 </ul>
                                             </div>
 
-                                            <div className={revpen ? "sidebar-item open" : "sidebar-item"}>
+                                            <div className={revpen ? "sidebar-item open" : "sidebar-item"} onClick={() => setRevpen(!revpen)}>
                                                 <span className="sidebar-title navLink">
                                                     <span className="">
                                                         <i className="fa-solid fa-envelopes-bulk" id="navLinkIcon"></i>
                                                         Reviews
                                                     </span>
-                                                    <i className="fa-solid fa-angle-down toggle-btn" onClick={() => setRevpen(!revpen)}></i>
+                                                    <i className="fa-solid fa-angle-down toggle-btn" ></i>
                                                 </span>
                                                 <ul className="sidebar-content">
                                                     <li className="sidebar-submenu"><Link to="/mangeReview" id="post-li">Review Mangement</Link></li>
@@ -132,13 +133,13 @@ const Sidebar = () => {
                                         :
                                         <>
                                             {/* WRITE REVIEW */}
-                                            <div className={writePpen ? "sidebar-item open" : "sidebar-item"}>
+                                            <div className={writePpen ? "sidebar-item open" : "sidebar-item"} onClick={() => setWritePpen(!writePpen)}>
                                                 <span className="sidebar-title navLink">
                                                     <span className="">
                                                         <i className="fa-solid fa-blog" id="navLinkIcon"></i>
                                                         Review
                                                     </span>
-                                                    <i className="fa-solid fa-angle-down toggle-btn" onClick={() => setWritePpen(!writePpen)}></i>
+                                                    <i className="fa-solid fa-angle-down toggle-btn" ></i>
                                                 </span>
                                                 <ul className="sidebar-content">
                                                     <li className="sidebar-submenu"><Link to="/addreview" id="post-li">Add Review</Link></li>
@@ -148,9 +149,9 @@ const Sidebar = () => {
                                 }
 
                                 {/* LOGOUT */}
-                                <div className={suopen ? "sidebar-item open" : "sidebar-item"}>
+                                <div className={suopen ? "sidebar-item open" : "sidebar-item"} onClick={handleLogout}>
                                     <span className="sidebar-title navLink">
-                                        <span onClick={handleLogout} style={{ cursor: "pointer" }}>
+                                        <span style={{ cursor: "pointer" }}>
                                             <i className="fa-solid fa-right-from-bracket" id="navLinkIcon"></i>
                                             Logout
                                         </span>

@@ -16,7 +16,7 @@ const Forgotpass = () => {
     }
 
     try {
-      const result = await axios.post(" https://boktiar-server.up.railway.app/auth/forgotpass", forgotobj)
+      const result = await axios.post(" https://boktiar-server.vercel.app/auth/forgotpass", forgotobj)
       console.log(result)
       setHide(!hide)
       setPass(result.data)

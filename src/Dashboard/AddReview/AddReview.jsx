@@ -33,14 +33,14 @@ const AddReview = () => {
             data.append("file", file);
             newReview.photo = filename;
             try {
-                await axios.post(" https://boktiar-server.up.railway.app/review/reviewimg", data);
+                await axios.post(" https://boktiar-server.vercel.app/review/reviewimg", data);
             } catch (err) {
                 console.log(err, 'review img submit failed');
             }
         }
 
         try {
-            const res = await axios.post(" https://boktiar-server.up.railway.app/review/addreview", newReview);
+            const res = await axios.post(" https://boktiar-server.vercel.app/review/addreview", newReview);
             console.log(res)
             res.data && Swal.fire({
                 icon: 'success',

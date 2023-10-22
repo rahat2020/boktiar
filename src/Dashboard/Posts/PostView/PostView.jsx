@@ -7,7 +7,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const StudentView = () => {
-    const pic = " https://boktiar-server.up.railway.app/images/";
+    const pic = " https://boktiar-server.vercel.app/images/";
     const [singlePost, setsinglePost] = useState([])
     // console.log('single post', singlePost.photo)
     // const [post, setPost] = useState({})
@@ -15,7 +15,7 @@ const StudentView = () => {
 
     useEffect(() => {
         const getPost = async () => {
-            const res = await axios.get(` https://boktiar-server.up.railway.app/post/singlePost/${_id}`)
+            const res = await axios.get(` https://boktiar-server.vercel.app/post/singlePost/${_id}`)
             setsinglePost(res.data)
             // setPost(res)
            
@@ -56,7 +56,7 @@ const StudentView = () => {
         }
         console.log(postObj)
         try {
-            const res = await axios.put(` https://boktiar-server.up.railway.app/post/update/${singlePost._id}`,postObj, config)
+            const res = await axios.put(` https://boktiar-server.vercel.app/post/update/${singlePost._id}`,postObj, config)
             res && Swal.fire({
                 icon: 'success',
                 title: 'Post updated Successfully',

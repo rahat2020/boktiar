@@ -35,7 +35,7 @@ const Login = () => {
     // console.log(loginobj)
     try {
       dispatch({ type: "LOGIN_START" });
-      const res = await axios.post(" https://boktiar-server.up.railway.app/auth/login", loginobj)
+      const res = await axios.post(" https://boktiar-server.vercel.app/auth/login", loginobj)
       console.log(res)
       res.data && Swal.fire({
         icon: 'success',
